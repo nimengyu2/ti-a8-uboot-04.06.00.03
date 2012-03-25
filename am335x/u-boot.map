@@ -1,0 +1,1599 @@
+Archive member included because of file (symbol)
+
+/am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+                              arch/arm/cpu/armv7/omap-common/libomap-common.o (__aeabi_uidiv)
+/am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+                              common/libcommon.o (__aeabi_idiv)
+/am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+                              drivers/mtd/nand/libnand.o (__aeabi_llsr)
+/am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+                              drivers/mtd/nand/libnand.o (__aeabi_lasr)
+/am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+                              drivers/mmc/libmmc.o (__aeabi_llsl)
+/am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+                              /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                . = 0x0
+                0x00000000                . = ALIGN (0x4)
+
+.text           0x80800000    0x2686c
+ arch/arm/cpu/armv7/start.o(.text)
+ .text          0x80800000      0x440 arch/arm/cpu/armv7/start.o
+                0x80800000                _start
+                0x80800040                _end_vect
+                0x80800040                _TEXT_BASE
+                0x80800044                _bss_start_ofs
+                0x80800048                _image_copy_end_ofs
+                0x8080004c                _bss_end_ofs
+                0x80800050                _end_ofs
+                0x80800054                IRQ_STACK_START_IN
+                0x8080007c                relocate_code
+ *(.text)
+ .text          0x80800440      0x324 arch/arm/cpu/armv7/libarmv7.o
+                0x8080060c                invalidate_dcache_all
+                0x80800620                flush_dcache_all
+                0x80800634                invalidate_dcache_range
+                0x80800658                flush_dcache_range
+                0x8080067c                arm_init_before_mmu
+                0x808006a4                flush_cache
+                0x808006ac                invalidate_icache_all
+                0x808006c4                __v7_outer_cache_enable
+                0x808006c4                v7_outer_cache_enable
+                0x808006c8                v7_outer_cache_disable
+                0x808006c8                __v7_outer_cache_disable
+                0x808006cc                __v7_outer_cache_flush_all
+                0x808006cc                v7_outer_cache_flush_all
+                0x808006d0                v7_outer_cache_inval_all
+                0x808006d0                __v7_outer_cache_inval_all
+                0x808006d4                v7_outer_cache_flush_range
+                0x808006d4                __v7_outer_cache_flush_range
+                0x808006d8                __v7_outer_cache_inval_range
+                0x808006d8                v7_outer_cache_inval_range
+                0x808006dc                save_boot_params_default
+                0x808006e0                cleanup_before_linux
+                0x80800700                sdelay
+                0x8080070c                sr32
+                0x80800730                wait_on_value
+ .text          0x80800764      0x22c arch/arm/cpu/armv7/omap-common/libomap-common.o
+                0x80800764                reset_cpu
+                0x80800780                timer_init
+                0x808007c0                __udelay
+                0x80800818                get_timer_masked
+                0x80800858                get_timer
+                0x8080086c                get_ticks
+                0x8080087c                get_tbclk
+                0x808008e8                cancel_out
+ .text          0x80800990      0x4d4 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+                0x80800990                enable_gpmc_cs_config
+                0x80800a08                gpmc_init
+                0x80800a80                get_cpu_rev
+                0x80800a94                get_cpu_type
+                0x80800aac                get_board_rev
+                0x80800ab4                get_device_type
+                0x80800acc                get_sysboot_value
+                0x80800ae0                elm_check_error
+                0x80800cb4                elm_config
+                0x80800cf8                elm_reset
+                0x80800d28                elm_init
+                0x80800d44                save_boot_params
+                0x80800d48                lowlevel_init
+                0x80800da0                invalidate_dcache
+                0x80800e34                l2_cache_enable
+                0x80800e48                l2_cache_disable
+ .text          0x80800e64      0x914 arch/arm/lib/libarm.o
+                0x80800f08                coloured_LED_init
+                0x80800f08                __coloured_LED_init
+                0x80800f0c                __red_led_on
+                0x80800f0c                red_led_on
+                0x80800f10                __red_led_off
+                0x80800f10                red_led_off
+                0x80800f14                green_led_on
+                0x80800f14                __green_led_on
+                0x80800f18                green_led_off
+                0x80800f18                __green_led_off
+                0x80800f1c                yellow_led_on
+                0x80800f1c                __yellow_led_on
+                0x80800f20                __yellow_led_off
+                0x80800f20                yellow_led_off
+                0x80800f24                blue_led_on
+                0x80800f24                __blue_led_on
+                0x80800f28                __blue_led_off
+                0x80800f28                blue_led_off
+                0x80800f2c                __dram_init_banksize
+                0x80800f48                board_init_r
+                0x80801058                hang
+                0x8080106c                board_init_f
+                0x80801174                arch_lmb_reserve
+                0x80801198                do_bootm_linux
+                0x8080134c                __flush_cache
+                0x80801350                __flush_dcache_all
+                0x8080135c                enable_caches
+                0x8080135c                __enable_caches
+                0x80801488                __arm_init_before_mmu
+                0x8080148c                icache_enable
+                0x80801494                icache_disable
+                0x8080149c                icache_status
+                0x808014b0                dcache_enable
+                0x808014b8                dcache_disable
+                0x808014c0                dcache_status
+                0x808014d4                interrupt_init
+                0x808014f0                enable_interrupts
+                0x808014f4                disable_interrupts
+                0x808014fc                bad_mode
+                0x8080150c                show_regs
+                0x8080164c                do_undefined_instruction
+                0x80801670                do_software_interrupt
+                0x80801694                do_prefetch_abort
+                0x808016b8                do_data_abort
+                0x808016dc                do_not_used
+                0x80801700                do_fiq
+                0x80801724                do_irq
+                0x80801748                do_reset
+ .text          0x80801778     0xd358 common/libcommon.o
+                0x80801778                do_bdinfo
+                0x808018c4                do_go_exec
+                0x808018dc                do_go
+                0x80801968                do_bootd
+                0x80801bec                do_iminfo
+                0x80802128                arch_preboot_os
+                0x80802128                __arch_preboot_os
+                0x8080212c                do_bootm_subcommand
+                0x80802374                do_bootm
+                0x80802608                bootm_maybe_autostart
+                0x808026d8                flush_icache
+                0x808026e4                do_icache
+                0x80802764                flush_dcache
+                0x80802770                do_dcache
+                0x808027f0                do_coninfo
+                0x808028a8                do_echo
+                0x80802928                do_exit
+                0x80802958                do_ext2load
+                0x80802c58                do_ext2ls
+                0x80802d80                do_fat_fsinfo
+                0x80802e58                do_fat_ls
+                0x80802f60                do_fat_fsload
+                0x808030e0                do_help
+                0x80803ab8                i2c_init_board
+                0x80803ab8                __def_i2c_init_board
+                0x80803abc                __def_i2c_get_bus_speed
+                0x80803abc                i2c_get_bus_speed
+                0x80803ac8                __def_i2c_set_bus_speed
+                0x80803ac8                i2c_set_bus_speed
+                0x80803b6c                binary_test
+                0x80803d08                do_itest
+                0x808040e4                do_load_serial
+                0x808041c0                send_pad
+                0x808041ec                ktrans
+                0x8080420c                chk1
+                0x80804234                s1_sendpacket
+                0x80804258                send_ack
+                0x808042b4                send_nack
+                0x80804310                k_data_init
+                0x80804330                k_data_save
+                0x80804354                k_data_restore
+                0x80804378                k_data_char
+                0x808043c8                handle_send_packet
+                0x8080458c                do_load_serial_bin
+                0x808049e4                do_mem_crc
+                0x80804a8c                do_mem_base
+                0x80804acc                do_mem_mtest
+                0x80804c70                do_mem_loop
+                0x80804d68                do_mem_cp
+                0x80804e40                do_mem_cmp
+                0x80804fd0                do_mem_mw
+                0x808051d8                do_mem_nm
+                0x808051fc                do_mem_mm
+                0x80805220                do_mem_md
+                0x808052f8                do_sleep
+                0x80805378                do_mmcops
+                0x808057a8                do_mmcinfo
+                0x808059a0                do_nandboot
+                0x80805e38                do_nand
+                0x80806818                do_ping
+                0x80806b6c                do_nfs
+                0x80806b78                do_dhcp
+                0x80806b84                do_tftpb
+                0x80806b90                do_bootp
+                0x80806ea8                do_env_save
+                0x80806f6c                do_env_print
+                0x80806ff0                get_env_id
+                0x80807000                _do_env_set
+                0x808073a8                do_env_ask
+                0x80807504                do_env_set
+                0x80807520                setenv
+                0x80807784                envmatch
+                0x808077e8                getenv_f
+                0x808078a4                getenv
+                0x80807910                do_env_edit
+                0x80807d6c                source
+                0x80807e90                do_source
+                0x80807ed4                do_false
+                0x80807edc                do_true
+                0x80807ee4                do_test
+                0x8080834c                do_version
+                0x80808384                do_imgextract
+                0x80808654                find_cmd_tbl
+                0x808086f0                find_cmd
+                0x80808718                cmd_usage
+                0x80808774                _do_help
+                0x808088fc                cmd_get_data_size
+                0x808089f0                serial_printf
+                0x80808a30                fgetc
+                0x80808a5c                ftstc
+                0x80808a88                fputc
+                0x80808ab0                fputs
+                0x80808ad8                fprintf
+                0x80808b20                getc
+                0x80808b38                tstc
+                0x80808b50                putc
+                0x80808b6c                puts
+                0x80808b88                printf
+                0x80808bc8                vprintf
+                0x80808bfc                ctrlc
+                0x80808c48                disable_ctrlc
+                0x80808c60                had_ctrlc
+                0x80808c70                clear_ctrlc
+                0x80808c84                dbg
+                0x80808c90                search_device
+                0x80808cb8                console_assign
+                0x80808cf8                console_init_f
+                0x80808d08                stdio_print_current_devices
+                0x80808d0c                console_init_r
+                0x80808df0                sbrk
+                0x80808e4c                mem_malloc_init
+                0x80808e70                malloc_trim
+                0x80808f40                free
+                0x80809164                cfree
+                0x80809168                malloc
+                0x80809720                calloc
+                0x80809800                memalign
+                0x80809910                pvalloc
+                0x80809928                valloc
+                0x80809934                realloc
+                0x80809d84                malloc_usable_size
+                0x80809dc4                mallopt
+                0x80809e38                env_get_addr
+                0x80809e5c                env_get_char_memory
+                0x80809e6c                env_get_char
+                0x80809ea0                set_default_env
+                0x80809f40                env_import
+                0x8080a010                env_relocate
+                0x8080a040                env_get_char_spec
+                0x8080a04c                env_init
+                0x8080a068                writeenv
+                0x8080a120                saveenv
+                0x8080a264                readenv
+                0x8080a318                env_relocate_spec
+                0x8080a364                get_version
+                0x8080a36c                jumptable_init
+                0x8080a5a0                do_showvar
+                0x8080aab8                simple_itoa
+                0x8080ab10                get_local_var
+                0x8080ace0                set_local_var
+                0x8080ae9c                unset_local_var
+                0x8080af3c                new_pipe
+                0x8080afac                reserved_word
+                0x8080b2d4                mapset
+                0x8080b2f8                update_ifs_map
+                0x8080b368                parse_string_outer
+                0x8080c258                parse_file_outer
+                0x8080c29c                u_boot_hush_start
+                0x8080c330                image_check_hcrc
+                0x8080c380                image_check_dcrc
+                0x8080c3c0                image_multi_count
+                0x8080c3e4                image_multi_getimg
+                0x8080c468                getenv_yesno
+                0x8080c490                getenv_bootm_low
+                0x8080c4c0                getenv_bootm_size
+                0x8080c51c                getenv_bootm_mapsize
+                0x8080c54c                memmove_wd
+                0x8080c558                genimg_print_size
+                0x8080c588                get_table_entry_name
+                0x8080c5b4                genimg_get_os_name
+                0x8080c5cc                genimg_get_arch_name
+                0x8080c5e4                genimg_get_type_name
+                0x8080c5fc                genimg_get_comp_name
+                0x8080c614                image_print_contents
+                0x8080c78c                get_table_entry_id
+                0x8080c7d8                genimg_get_os_id
+                0x8080c7f0                genimg_get_arch_id
+                0x8080c808                genimg_get_type_id
+                0x8080c820                genimg_get_comp_id
+                0x8080c838                genimg_get_format
+                0x8080c850                genimg_get_image
+                0x8080c854                genimg_has_config
+                0x8080c85c                boot_get_ramdisk
+                0x8080ca8c                boot_ramdisk_high
+                0x8080cc90                __show_boot_progress
+                0x8080cc90                show_boot_progress
+                0x8080cc94                main_loop
+                0x8080cd98                readline_into_buffer
+                0x8080cf68                readline
+                0x8080cf7c                parse_line
+                0x8080d00c                run_command
+                0x8080d3ac                do_run
+                0x8080d420                get_ram_size
+                0x8080d570                miiphy_get_dev_by_name
+                0x8080d5cc                miiphy_init
+                0x8080d5e8                mdio_alloc
+                0x8080d618                miiphy_register
+                0x8080d714                mdio_register
+                0x8080d7a0                mdio_list_devices
+                0x8080d838                miiphy_set_current_dev
+                0x8080d8c8                mdio_get_current_dev
+                0x8080d8d8                mdio_phydev_for_ethname
+                0x8080d960                miiphy_get_current_dev
+                0x8080d978                miiphy_read
+                0x8080d9c0                miiphy_write
+                0x8080d9fc                miiphy_listdev
+                0x8080da64                miiphy_info
+                0x8080daf0                miiphy_reset
+                0x8080db98                miiphy_is_1000base_x
+                0x8080dbc4                miiphy_duplex
+                0x8080dce0                miiphy_speed
+                0x8080de34                srec_decode
+                0x8080e09c                stdio_get_list
+                0x8080e0a8                stdio_get_by_name
+                0x8080e0fc                stdio_clone
+                0x8080e144                stdio_register
+                0x8080e188                stdio_init
+                0x8080e220                CYGACC_COMM_IF_GETC_TIMEOUT
+                0x8080e510                CYGACC_COMM_IF_PUTC
+                0x8080e518                parse_num
+                0x8080e634                xyzModem_stream_open
+                0x8080e77c                xyzModem_stream_read
+                0x8080e9cc                xyzModem_stream_close
+                0x8080ea1c                xyzModem_stream_terminate
+                0x8080eab0                xyzModem_error
+ .text          0x8080ead0      0x8d8 disk/libdisk.o
+                0x8080ead0                get_dev
+                0x8080eb30                dev_print
+                0x8080ed48                init_part
+                0x8080ed64                get_partition_info
+                0x8080ed8c                print_part
+                0x8080f2f8                test_part_dos
+                0x8080f360                print_part_dos
+                0x8080f38c                get_partition_info_dos
+ .text          0x8080f3a8      0x82c drivers/i2c/libi2c.o
+                0x8080f4b4                i2c_init
+                0x8080f5e4                i2c_probe
+                0x8080f6d4                i2c_read
+                0x8080f928                i2c_write
+                0x8080fb50                i2c_get_bus_num
+                0x8080fb60                i2c_set_bus_num
+ .text          0x8080fbd4     0x1d98 drivers/mmc/libmmc.o
+                0x8080fbf0                __board_mmc_getcd
+                0x8080fbf0                board_mmc_getcd
+                0x8080fbf8                mmc_send_cmd
+                0x8080fc08                mmc_send_status
+                0x8080fccc                mmc_set_blocklen
+                0x8080fd04                find_mmc_device
+                0x8081004c                mmc_read_blocks
+                0x808101d0                mmc_go_idle
+                0x80810224                sd_send_op_cond
+                0x8081037c                mmc_send_op_cond
+                0x808104e4                mmc_send_ext_csd
+                0x80810538                mmc_switch
+                0x80810594                mmc_change_freq
+                0x80810644                mmc_switch_part
+                0x80810680                sd_switch
+                0x808106f0                sd_change_freq
+                0x808108d0                mmc_set_ios
+                0x808108e0                mmc_set_clock
+                0x8081090c                mmc_set_bus_width
+                0x80810920                mmc_startup
+                0x80810f4c                mmc_send_if_cond
+                0x80810fcc                mmc_register
+                0x80811050                mmc_get_dev
+                0x80811064                mmc_init
+                0x8081111c                cpu_mmc_init
+                0x80811124                print_mmc_devices
+                0x80811188                get_mmc_num
+                0x80811198                mmc_initialize
+                0x808116b4                mmc_board_init
+                0x808116bc                mmc_init_stream
+                0x808118b8                omap_mmc_init
+ .text          0x8081196c      0x1dc drivers/mtd/libmtd.o
+                0x8081196c                add_mtd_device
+                0x808119dc                del_mtd_device
+                0x80811a2c                get_mtd_device
+                0x80811aa8                get_mtd_device_nm
+                0x80811b1c                put_mtd_device
+ .text          0x80811b48     0x67ec drivers/mtd/nand/libnand.o
+                0x80811b48                nand_init
+                0x80812bb8                nand_update_bbt
+                0x80812e74                nand_scan_bbt
+                0x80813324                nand_default_bbt
+                0x808133d8                nand_isbad_bbt
+                0x808134c8                nand_erase_opts
+                0x80813828                nand_write_skip_bad
+                0x80813a20                nand_read_skip_bad
+                0x80813c20                nand_calculate_ecc
+                0x80813d10                nand_correct_data
+                0x80813efc                nand_read_buf
+                0x80813f9c                nand_read_buf16
+                0x80815c74                nand_wait_ready
+                0x80816850                nand_erase_nand
+                0x80816c38                nand_scan_ident
+                0x8081722c                nand_scan_tail
+                0x808177b8                nand_scan
+                0x808177dc                nand_release
+                0x80817fbc                __ti81xx_nand_switch_ecc
+                0x808181c4                ti81xx_nand_switch_ecc
+                0x80818224                board_nand_init
+ .text          0x80818334      0x634 drivers/mtd/spi/libspi_flash.o
+                0x808183c0                spi_flash_cmd_read
+                0x808183dc                spi_flash_cmd
+                0x80818408                spi_flash_cmd_write
+                0x80818424                spi_flash_read_common
+                0x80818470                spi_flash_cmd_read_fast
+                0x808184c4                spi_flash_cmd_poll_bit
+                0x80818588                spi_flash_cmd_wait_ready
+                0x80818594                spi_flash_cmd_write_multi
+                0x808186a0                spi_flash_cmd_erase
+                0x80818794                spi_flash_probe
+                0x80818874                spi_flash_free
+                0x808188a4                spi_flash_probe_winbond
+ .text          0x80818968      0xd8c drivers/net/libnet.o
+                0x80819548                cpsw_register
+ .text          0x808196f4        0x0 drivers/pcmcia/libpcmcia.o
+ .text          0x808196f4        0x0 drivers/rtc/librtc.o
+ .text          0x808196f4      0x240 drivers/serial/libserial.o
+                0x808196f4                NS16550_init
+                0x8081974c                NS16550_reinit
+                0x8081979c                NS16550_putc
+                0x808197b0                NS16550_getc
+                0x808197c8                NS16550_tstc
+                0x808197fc                serial_init
+                0x80819830                _serial_putc
+                0x80819868                _serial_putc_raw
+                0x80819884                _serial_puts
+                0x808198ac                _serial_getc
+                0x808198c8                _serial_tstc
+                0x808198dc                _serial_setbrg
+                0x80819904                serial_putc
+                0x8081990c                serial_putc_raw
+                0x80819914                serial_puts
+                0x8081991c                serial_getc
+                0x80819924                serial_tstc
+                0x8081992c                serial_setbrg
+ .text          0x80819934      0x630 drivers/spi/libspi.o
+                0x8081996c                spi_init
+                0x80819970                spi_setup_slave
+                0x80819aa8                spi_free_slave
+                0x80819aac                spi_claim_bus
+                0x80819b98                spi_release_bus
+                0x80819ba0                omap3_spi_write
+                0x80819d00                omap3_spi_read
+                0x80819e54                spi_xfer
+                0x80819f54                spi_cs_is_valid
+                0x80819f5c                spi_cs_activate
+                0x80819f60                spi_cs_deactivate
+ .text          0x80819f64      0xfdc fs/ext2/libext2fs.o
+                0x8081a05c                ext2fs_free_node
+                0x8081a07c                ext2fs_read_file
+                0x8081a794                ext2fs_find_file1
+                0x8081aa20                ext2fs_find_file
+                0x8081aa90                ext2fs_ls
+                0x8081ab04                ext2fs_open
+                0x8081ab98                ext2fs_close
+                0x8081ac4c                ext2fs_read
+                0x8081ac7c                ext2fs_mount
+                0x8081ad44                ext2fs_set_blk_dev
+                0x8081ad98                ext2fs_devread
+ .text          0x8081af40     0x1778 fs/fat/libfat.o
+                0x8081b650                fat_register_device
+                0x8081b760                do_fat_read
+                0x8081c1b8                file_fat_detectfs
+                0x8081c310                file_fat_ls
+                0x8081c320                file_fat_read
+                0x8081c358                file_getfsname
+                0x8081c370                file_cd
+                0x8081c564                file_detectfs
+                0x8081c5a0                file_ls
+                0x8081c624                file_read
+ .text          0x8081c6b8     0x2d08 lib/libgeneric.o
+                0x8081c6b8                crc7
+                0x8081c6e0                cyg_crc16
+                0x8081c728                crc32_no_comp
+                0x8081c810                crc32
+                0x8081c824                crc32_wd
+                0x8081c828                display_options
+                0x8081c848                print_size
+                0x8081c980                print_buffer
+                0x8081caec                zfree
+                0x8081caf4                zalloc
+                0x8081cb04                zunzip
+                0x8081cc0c                gunzip
+                0x8081cccc                hcreate_r
+                0x8081cd78                hdestroy_r
+                0x8081cdec                hstrstr_r
+                0x8081ce98                hmatch_r
+                0x8081cf38                hsearch_r
+                0x8081d228                hdelete_r
+                0x8081d2b0                hexport_r
+                0x8081d4c8                himport_r
+                0x8081d8d8                lmb_dump_all
+                0x8081d8dc                lmb_init
+                0x8081d904                lmb_add
+                0x8081d908                lmb_free
+                0x8081da2c                lmb_reserve
+                0x8081da34                lmb_overlaps_region
+                0x8081da88                __lmb_alloc_base
+                0x8081dbb8                lmb_alloc_base
+                0x8081dbec                lmb_alloc
+                0x8081dbf4                lmb_is_reserved
+                0x8081dc54                board_lmb_reserve
+                0x8081dc54                __board_lmb_reserve
+                0x8081dc58                __arch_lmb_reserve
+                0x8081dc5c                ldiv
+                0x8081dcac                string_to_ip
+                0x8081dd24                qsort
+                0x8081de28                strcmp_compar
+                0x8081de34                strmhz
+                0x8081dea0                __div64_32
+                0x8081df7c                strcpy
+                0x8081df94                strncpy
+                0x8081dfb8                strcat
+                0x8081dfe4                strncat
+                0x8081e02c                strcmp
+                0x8081e054                strncmp
+                0x8081e090                strchr
+                0x8081e0c4                strlen
+                0x8081e0e0                strrchr
+                0x8081e11c                strnlen
+                0x8081e144                strdup
+                0x8081e178                strspn
+                0x8081e1b8                strpbrk
+                0x8081e1f4                strtok
+                0x8081e26c                strsep
+                0x8081e2a0                strswab
+                0x8081e2ec                memset
+                0x8081e354                bcopy
+                0x8081e374                memcpy
+                0x8081e3e8                memmove
+                0x8081e43c                memcmp
+                0x8081e474                memscan
+                0x8081e49c                strstr
+                0x8081e4fc                memchr
+                0x8081e530                udelay
+                0x8081ea5c                simple_strtoul
+                0x8081eb08                strict_strtoul
+                0x8081eb80                simple_strtol
+                0x8081eba8                ustrtoul
+                0x8081ec1c                simple_strtoull
+                0x8081ecf8                vsprintf
+                0x8081f344                sprintf
+                0x8081f368                panic
+                0x8081f3ac                __assert_fail
+ .text          0x8081f3c0     0x2638 lib/zlib/libz.o
+                0x8081f3c0                zcfree
+                0x8081f3c8                zcalloc
+                0x8081f3d0                inflate_fast
+                0x8081f914                inflate_table
+                0x8081fe84                inflateReset
+                0x8081ff04                inflateInit2_
+                0x8082000c                inflateInit_
+                0x80820020                inflateEnd
+                0x8082008c                adler32
+                0x80820378                inflate
+ .text          0x808219f8     0x3af8 net/libnet.o
+                0x808221ac                BootpRequest
+                0x808223a0                DhcpRequest
+                0x808223ec                cpu_eth_init
+                0x8082244c                eth_parse_enetaddr
+                0x808224a4                eth_getenv_enetaddr
+                0x808224c4                eth_setenv_enetaddr
+                0x808224f8                eth_getenv_enetaddr_by_index
+                0x80822548                eth_get_dev
+                0x80822558                eth_get_dev_by_name
+                0x808225dc                eth_get_dev_by_index
+                0x80822628                eth_get_dev_index
+                0x80822678                eth_write_hwaddr
+                0x8082279c                eth_register
+                0x808227f8                eth_initialize
+                0x80822990                eth_halt
+                0x808229c0                eth_send
+                0x808229f8                eth_rx
+                0x80822a24                eth_try_another
+                0x80822a9c                eth_init
+                0x80822b68                eth_set_current
+                0x80822bf8                eth_get_name
+                0x80822c9c                NetSetHandler
+                0x80822cac                NetSetTimeout
+                0x80822cdc                NetStartAgain
+                0x80822de8                NetSendPacket
+                0x80822dec                NetCksum
+                0x80822e24                NetCksumOk
+                0x80822e48                NetEthHdrSize
+                0x80822e88                NetSetEther
+                0x80822f38                NetReceive
+                0x80823444                ArpRequest
+                0x80823540                ArpTimeoutCheck
+                0x808235b4                PingSend
+                0x808236fc                NetSetIP
+                0x808237f4                NetSendUDPPacket
+                0x8082392c                copy_filename
+                0x80823970                random_port
+                0x8082398c                ip_to_string
+                0x808239dc                VLAN_to_string
+                0x80823a2c                string_to_VLAN
+                0x80823a84                getenv_VLAN
+                0x80823a94                NetLoop
+                0x80824ac8                NfsStart
+                0x8082520c                TftpStart
+ .text          0x808254f0     0x1098 board/ti/am335x/libam335x.o
+                0x80825bd8                dram_init
+                0x80825be8                dram_init_banksize
+                0x80825c04                read_eeprom
+                0x80825ca8                s_init
+                0x80825cf0                board_evm_init
+                0x80825d30                board_init
+                0x80825eac                misc_init_r
+                0x80825eb4                board_late_init
+                0x80825efc                board_eth_init
+                0x80826080                board_mmc_init
+                0x80826094                mpu_pll_config
+                0x808260fc                enable_ddr_clocks
+                0x80826130                pll_init
+                0x8082649c                configure_evm_pin_mux
+                0x80826570                enable_i2c0_pin_mux
+                0x8082657c                enable_uart0_pin_mux
+ .text          0x80826588       0x20 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+                0x80826588                raise
+                0x808265a4                __aeabi_unwind_cpp_pr0
+ .text          0x808265a8      0x114 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+                0x808265a8                __udivsi3
+                0x808265a8                __aeabi_uidiv
+                0x8082669c                __aeabi_uidivmod
+ .text          0x808266bc      0x148 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+                0x808266bc                __aeabi_idiv
+                0x808266bc                __divsi3
+                0x808267e4                __aeabi_idivmod
+ .text          0x80826804       0x1c /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+                0x80826804                __aeabi_llsr
+                0x80826804                __lshrdi3
+ .text          0x80826820       0x1c /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+                0x80826820                __ashrdi3
+                0x80826820                __aeabi_lasr
+ .text          0x8082683c       0x1c /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+                0x8082683c                __ashldi3
+                0x8082683c                __aeabi_llsl
+ .text          0x80826858       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+                0x80826858                __aeabi_ldiv0
+                0x80826858                __aeabi_idiv0
+
+.glue_7         0x8082686c        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x8082686c        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x8082686c        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x8082686c        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+                0x8082686c                . = ALIGN (0x4)
+
+.rodata         0x8082686c     0xa2fd
+ *(SORT(.rodata*))
+ .rodata        0x8082686c       0x1c arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .rodata        0x80826888       0x80 arch/arm/lib/libarm.o
+ .rodata        0x80826908     0x17bc common/libcommon.o
+                0x80826a14                version_string
+                0x80826a94                default_environment
+ .rodata        0x808280c4       0x10 disk/libdisk.o
+ .rodata        0x808280d4       0xa5 drivers/mmc/libmmc.o
+ *fill*         0x80828179        0x3 00
+ .rodata        0x8082817c      0x617 drivers/mtd/nand/libnand.o
+                0x80828184                nand_flash_ids
+                0x808285ec                nand_manuf_ids
+ *fill*         0x80828793        0x1 00
+ .rodata        0x80828794       0x80 drivers/mtd/spi/libspi_flash.o
+ .rodata        0x80828814       0x10 drivers/serial/libserial.o
+ .rodata        0x80828824       0x18 fs/fat/libfat.o
+ .rodata        0x8082883c      0x827 lib/libgeneric.o
+                0x8082883c                crc7_syndrome_table
+                0x80828f42                _ctype
+                0x80829042                hex_asc
+ *fill*         0x80829063        0x1 00
+ .rodata        0x80829064      0x9cc lib/zlib/libz.o
+                0x80829a08                z_errmsg
+ .rodata        0x80829a30       0x16 arch/arm/cpu/armv7/libarmv7.o
+ .rodata        0x80829a46        0xf fs/ext2/libext2fs.o
+ .rodata        0x80829a55       0x22 net/libnet.o
+ .rodata.str1.1
+                0x80829a77       0x65 arch/arm/cpu/armv7/libarmv7.o
+ .rodata.str1.1
+                0x80829adc      0x352 arch/arm/lib/libarm.o
+                                0x376 (size before relaxing)
+ .rodata.str1.1
+                0x80829e2e     0x46f8 common/libcommon.o
+                               0x4d0f (size before relaxing)
+ .rodata.str1.1
+                0x8082e526      0x2ba disk/libdisk.o
+                                0x2db (size before relaxing)
+ .rodata.str1.1
+                0x8082e7e0      0x274 drivers/mmc/libmmc.o
+                                0x280 (size before relaxing)
+ .rodata.str1.1
+                0x8082ea54       0x50 drivers/mtd/libmtd.o
+ .rodata.str1.1
+                0x8082eaa4      0xc4f drivers/mtd/nand/libnand.o
+                                0xc89 (size before relaxing)
+ .rodata.str1.1
+                0x8082f6f3       0xa1 drivers/mtd/spi/libspi_flash.o
+                                 0xa3 (size before relaxing)
+ .rodata.str1.1
+                0x8082f794       0x6b drivers/net/libnet.o
+ .rodata.str1.1
+                0x8082f7ff      0x145 drivers/spi/libspi.o
+ .rodata.str1.1
+                0x8082f944      0x266 fs/ext2/libext2fs.o
+ .rodata.str1.1
+                0x8082fbaa      0x195 fs/fat/libfat.o
+                                0x1ca (size before relaxing)
+ .rodata.str1.1
+                0x8082fd3f      0x14d lib/libgeneric.o
+                                0x15f (size before relaxing)
+ .rodata.str1.1
+                0x8082fe8c      0x21c lib/zlib/libz.o
+                                0x21d (size before relaxing)
+ .rodata.str1.1
+                0x808300a8      0x72e net/libnet.o
+                                0x8f2 (size before relaxing)
+ .rodata.str1.1
+                0x808307d6      0x378 board/ti/am335x/libam335x.o
+                                0x397 (size before relaxing)
+ .rodata.str1.1
+                0x80830b4e       0x1b /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+
+.hash           0x80830b6c       0x44
+ .hash          0x80830b6c       0x44 arch/arm/cpu/armv7/start.o
+                0x80830bb0                . = ALIGN (0x4)
+
+.data           0x80830bb0     0x20b4
+ *(.data)
+ .data          0x80830bb0        0x0 arch/arm/cpu/armv7/start.o
+ .data          0x80830bb0        0x0 arch/arm/cpu/armv7/libarmv7.o
+ .data          0x80830bb0        0x0 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .data          0x80830bb0        0x0 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .data          0x80830bb0       0x24 arch/arm/lib/libarm.o
+                0x80830bb0                init_sequence
+ .data          0x80830bd4      0x760 common/libcommon.o
+                0x80830e88                load_addr
+                0x808312a0                env_name_spec
+                0x80831328                stdio_names
+ .data          0x80831334        0x0 disk/libdisk.o
+ .data          0x80831334        0x4 drivers/i2c/libi2c.o
+ .data          0x80831338        0x4 drivers/mmc/libmmc.o
+ .data          0x8083133c        0x0 drivers/mtd/libmtd.o
+ .data          0x8083133c     0x1354 drivers/mtd/nand/libnand.o
+                0x8083133c                nand_curr_device
+ .data          0x80832690        0x0 drivers/mtd/spi/libspi_flash.o
+ .data          0x80832690        0x0 drivers/net/libnet.o
+ .data          0x80832690        0x0 drivers/pcmcia/libpcmcia.o
+ .data          0x80832690        0x0 drivers/rtc/librtc.o
+ .data          0x80832690        0x0 drivers/serial/libserial.o
+ .data          0x80832690        0x0 drivers/spi/libspi.o
+ .data          0x80832690        0x8 fs/ext2/libext2fs.o
+                0x80832690                indir1_blkno
+                0x80832694                indir2_blkno
+ .data          0x80832698      0x208 fs/fat/libfat.o
+                0x8083269c                file_cwd
+ .data          0x808328a0        0x0 lib/libgeneric.o
+ .data          0x808328a0        0x0 lib/zlib/libz.o
+ .data          0x808328a0       0x28 net/libnet.o
+                0x808328a0                NetOurVLAN
+                0x808328a2                NetOurNativeVLAN
+                0x808328a4                NetBcastAddr
+                0x808328c0                TftpRRQTimeoutCountMax
+                0x808328c4                TftpRRQTimeoutMSecs
+ .data          0x808328c8      0x39c board/ti/am335x/libam335x.o
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .data          0x80832c64        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.got            0x80832c64        0x0
+ .got           0x00000000        0x0 arch/arm/cpu/armv7/start.o
+
+.got.plt        0x80832c64        0xc
+ .got.plt       0x80832c64        0xc arch/arm/cpu/armv7/start.o
+                0x80832c64                _GLOBAL_OFFSET_TABLE_
+                0x80832c70                . = ALIGN (0x4)
+                0x80832c70                . = .
+                0x80832c70                __u_boot_cmd_start = .
+
+.u_boot_cmd     0x80832c70      0x5a0
+ *(.u_boot_cmd)
+ .u_boot_cmd    0x80832c70      0x588 common/libcommon.o
+                0x80832c70                __u_boot_cmd_bdinfo
+                0x80832c88                __u_boot_cmd_go
+                0x80832ca0                __u_boot_cmd_reset
+                0x80832cb8                __u_boot_cmd_bootm
+                0x80832cd0                __u_boot_cmd_boot
+                0x80832ce8                __u_boot_cmd_bootd
+                0x80832d00                __u_boot_cmd_iminfo
+                0x80832d18                __u_boot_cmd_icache
+                0x80832d30                __u_boot_cmd_dcache
+                0x80832d48                __u_boot_cmd_coninfo
+                0x80832d60                __u_boot_cmd_echo
+                0x80832d78                __u_boot_cmd_exit
+                0x80832d90                __u_boot_cmd_ext2ls
+                0x80832da8                __u_boot_cmd_ext2load
+                0x80832dc0                __u_boot_cmd_fatload
+                0x80832dd8                __u_boot_cmd_fatls
+                0x80832df0                __u_boot_cmd_fatinfo
+                0x80832e08                __u_boot_cmd_help
+                0x80832e20                __u_boot_cmd_question_mark
+                0x80832e38                __u_boot_cmd_i2c
+                0x80832e50                __u_boot_cmd_itest
+                0x80832e68                __u_boot_cmd_loads
+                0x80832e80                __u_boot_cmd_loadb
+                0x80832e98                __u_boot_cmd_loady
+                0x80832eb0                __u_boot_cmd_md
+                0x80832ec8                __u_boot_cmd_mm
+                0x80832ee0                __u_boot_cmd_nm
+                0x80832ef8                __u_boot_cmd_mw
+                0x80832f10                __u_boot_cmd_cp
+                0x80832f28                __u_boot_cmd_cmp
+                0x80832f40                __u_boot_cmd_crc32
+                0x80832f58                __u_boot_cmd_base
+                0x80832f70                __u_boot_cmd_loop
+                0x80832f88                __u_boot_cmd_mtest
+                0x80832fa0                __u_boot_cmd_sleep
+                0x80832fb8                __u_boot_cmd_mmcinfo
+                0x80832fd0                __u_boot_cmd_mmc
+                0x80832fe8                __u_boot_cmd_nand
+                0x80833000                __u_boot_cmd_nboot
+                0x80833018                __u_boot_cmd_bootp
+                0x80833030                __u_boot_cmd_tftpboot
+                0x80833048                __u_boot_cmd_dhcp
+                0x80833060                __u_boot_cmd_nfs
+                0x80833078                __u_boot_cmd_ping
+                0x80833090                __u_boot_cmd_saveenv
+                0x808330a8                __u_boot_cmd_env
+                0x808330c0                __u_boot_cmd_editenv
+                0x808330d8                __u_boot_cmd_printenv
+                0x808330f0                __u_boot_cmd_setenv
+                0x80833108                __u_boot_cmd_askenv
+                0x80833120                __u_boot_cmd_run
+                0x80833138                __u_boot_cmd_sf
+                0x80833150                __u_boot_cmd_source
+                0x80833168                __u_boot_cmd_test
+                0x80833180                __u_boot_cmd_false
+                0x80833198                __u_boot_cmd_true
+                0x808331b0                __u_boot_cmd_version
+                0x808331c8                __u_boot_cmd_imxtract
+                0x808331e0                __u_boot_cmd_showvar
+ .u_boot_cmd    0x808331f8       0x18 board/ti/am335x/libam335x.o
+                0x808331f8                __u_boot_cmd_nandecc
+                0x80833210                __u_boot_cmd_end = .
+                0x80833210                . = ALIGN (0x4)
+                0x80833210                __image_copy_end = .
+
+.rel.dyn        0x80833210     0x5488
+                0x80833210                __rel_dyn_start = .
+ *(.rel*)
+ .rel.got       0x00000000        0x0 arch/arm/cpu/armv7/start.o
+ .rel.plt       0x00000000        0x0 arch/arm/cpu/armv7/start.o
+ .rel.text      0x80833210     0x3840 arch/arm/cpu/armv7/start.o
+ .rel.rodata    0x80836a50      0x730 arch/arm/cpu/armv7/start.o
+ .rel.data      0x80837180      0xda8 arch/arm/cpu/armv7/start.o
+ .rel.u_boot_cmd
+                0x80837f28      0x770 arch/arm/cpu/armv7/start.o
+                0x80838698                __rel_dyn_end = .
+
+.dynsym         0x80838698       0xc0
+                0x80838698                __dynsym_start = .
+ *(.dynsym)
+ .dynsym        0x80838698       0xc0 arch/arm/cpu/armv7/start.o
+                0x80838758                _end = .
+
+.bss            0x80833210    0x3411c
+                0x80833210                __bss_start = .
+ *(.bss)
+ .bss           0x80833210        0x0 arch/arm/cpu/armv7/start.o
+ .bss           0x80833210        0x0 arch/arm/cpu/armv7/libarmv7.o
+ .bss           0x80833210        0x0 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .bss           0x80833210        0x8 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+                0x80833210                gpmc_cfg
+                0x80833214                elm_cfg
+ .bss           0x80833218        0x8 arch/arm/lib/libarm.o
+                0x80833218                monitor_flash_len
+ *fill*         0x80833220        0x0 00
+ .bss           0x80833220      0xc0c common/libcommon.o
+                0x80833370                his_pad_count
+                0x80833374                his_pad_char
+                0x8083338d                his_eol
+                0x80833394                os_data_init
+                0x808333a4                os_data_char
+                0x808333a8                his_quote
+                0x808333ac                send_ptr
+                0x808333b0                send_parms
+                0x808333ec                mem_malloc_brk
+                0x808333f0                mem_malloc_start
+                0x808333f4                mem_malloc_end
+                0x80833430                env_htab
+                0x8083343c                env_ptr
+                0x8083368c                last_return_code
+                0x80833794                nesting_level
+                0x80833798                console_buffer
+                0x808339e4                stdio_devices
+ .bss           0x80833e2c        0x0 disk/libdisk.o
+ .bss           0x80833e2c       0x10 drivers/i2c/libi2c.o
+ *fill*         0x80833e3c        0x4 00
+ .bss           0x80833e40      0x248 drivers/mmc/libmmc.o
+ .bss           0x80834088       0x80 drivers/mtd/libmtd.o
+                0x80834088                mtd_table
+ .bss           0x80834108      0x1d9 drivers/mtd/nand/libnand.o
+                0x80834108                nand_info
+ .bss           0x808342e1        0x0 drivers/mtd/spi/libspi_flash.o
+ *fill*         0x808342e1        0x3 00
+ .bss           0x808342e4        0x4 drivers/net/libnet.o
+ .bss           0x808342e8        0x0 drivers/pcmcia/libpcmcia.o
+ .bss           0x808342e8        0x0 drivers/rtc/librtc.o
+ .bss           0x808342e8        0x0 drivers/serial/libserial.o
+ .bss           0x808342e8        0x0 drivers/spi/libspi.o
+ .bss           0x808342e8       0x70 fs/ext2/libext2fs.o
+                0x808342ec                ext2fs_root
+                0x808342f0                indir1_block
+                0x808342f4                indir1_size
+                0x808342f8                indir2_block
+                0x808342fc                indir2_size
+                0x80834300                symlinknest
+                0x80834304                ext2fs_file
+ .bss           0x80834358    0x30008 fs/fat/libfat.o
+                0x80834360                get_vfatname_block
+                0x80844360                do_fat_read_block
+                0x80854360                get_dentfromdir_block
+ .bss           0x80864360        0x8 lib/libgeneric.o
+                0x80864360                errno
+                0x80864364                ___strtok
+ .bss           0x80864368        0x0 lib/zlib/libz.o
+ .bss           0x80864368     0x2f70 net/libnet.o
+                0x80864368                dhcp_leasetime
+                0x8086436c                NetDHCPServerIP
+                0x80864370                BootpID
+                0x80864374                dhcp_state
+                0x80864378                BootpTry
+                0x80864390                NetState
+                0x80864394                NetPingIP
+                0x808643b0                NetRestartWrap
+                0x808643b8                NetOurEther
+                0x808643c0                NetRxPacket
+                0x808643c4                NetRxPacketLen
+                0x808643c8                NetOurIP
+                0x808643cc                NetArpWaitPacketIP
+                0x808643d0                NetArpWaitPacketMAC
+                0x808643d4                NetArpWaitReplyIP
+                0x808643d8                NetArpWaitTxPacket
+                0x808643dc                NetArpWaitTxPacketSize
+                0x808643e0                NetTxPacket
+                0x808643e4                NetOurSubnetMask
+                0x808643e8                NetOurGatewayIP
+                0x808643ec                NetArpWaitTimerStart
+                0x808643f0                NetArpWaitTry
+                0x808643fa                NetEtherNullAddr
+                0x80864400                NetIPID
+                0x80864406                PktBuf
+                0x80866228                NetRxPackets
+                0x80866238                NetArpWaitPacketBuf
+                0x8086685c                NetServerIP
+                0x80866860                NetBootFileXferSize
+                0x80866864                NetOurNISDomain
+                0x80866884                NetOurHostName
+                0x808668a4                NetOurRootPath
+                0x808668e4                NetOurDNSIP
+                0x808668e8                NetOurDNS2IP
+                0x808668ec                NetBootFileSize
+                0x808668ee                NetServerEther
+                0x808668f4                BootFile
+ .bss           0x808672d8       0x54 board/ti/am335x/libam335x.o
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .bss           0x8086732c        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+                0x8086732c                . = ALIGN (0x4)
+                0x8086732c                __bss_end__ = .
+
+.dynbss         0x8086732c        0x0
+ .dynbss        0x00000000        0x0 arch/arm/cpu/armv7/start.o
+
+/DISCARD/
+ *(.dynstr*)
+ *(.dynamic*)
+ *(.plt*)
+ *(.interp*)
+ *(.gnu*)
+Address of section .text set to 0x80800000
+LOAD arch/arm/cpu/armv7/start.o
+START GROUP
+LOAD api/libapi.o
+LOAD arch/arm/cpu/armv7/libarmv7.o
+LOAD arch/arm/cpu/armv7/omap-common/libomap-common.o
+LOAD arch/arm/cpu/armv7/ti81xx/libti81xx.o
+LOAD arch/arm/lib/libarm.o
+LOAD common/libcommon.o
+LOAD disk/libdisk.o
+LOAD drivers/bios_emulator/libatibiosemu.o
+LOAD drivers/block/libblock.o
+LOAD drivers/dma/libdma.o
+LOAD drivers/fpga/libfpga.o
+LOAD drivers/gpio/libgpio.o
+LOAD drivers/hwmon/libhwmon.o
+LOAD drivers/i2c/libi2c.o
+LOAD drivers/input/libinput.o
+LOAD drivers/misc/libmisc.o
+LOAD drivers/mmc/libmmc.o
+LOAD drivers/mtd/libmtd.o
+LOAD drivers/mtd/nand/libnand.o
+LOAD drivers/mtd/onenand/libonenand.o
+LOAD drivers/mtd/spi/libspi_flash.o
+LOAD drivers/mtd/ubi/libubi.o
+LOAD drivers/net/libnet.o
+LOAD drivers/net/phy/libphy.o
+LOAD drivers/pci/libpci.o
+LOAD drivers/pcmcia/libpcmcia.o
+LOAD drivers/power/libpower.o
+LOAD drivers/rtc/librtc.o
+LOAD drivers/serial/libserial.o
+LOAD drivers/spi/libspi.o
+LOAD drivers/twserial/libtws.o
+LOAD drivers/usb/eth/libusb_eth.o
+LOAD drivers/usb/gadget/libusb_gadget.o
+LOAD drivers/usb/host/libusb_host.o
+LOAD drivers/usb/musb/libusb_musb.o
+LOAD drivers/usb/phy/libusb_phy.o
+LOAD drivers/video/libvideo.o
+LOAD drivers/watchdog/libwatchdog.o
+LOAD fs/cramfs/libcramfs.o
+LOAD fs/ext2/libext2fs.o
+LOAD fs/fat/libfat.o
+LOAD fs/fdos/libfdos.o
+LOAD fs/jffs2/libjffs2.o
+LOAD fs/reiserfs/libreiserfs.o
+LOAD fs/ubifs/libubifs.o
+LOAD fs/yaffs2/libyaffs2.o
+LOAD lib/libfdt/libfdt.o
+LOAD lib/libgeneric.o
+LOAD lib/lzma/liblzma.o
+LOAD lib/lzo/liblzo.o
+LOAD lib/zlib/libz.o
+LOAD net/libnet.o
+LOAD post/libpost.o
+LOAD board/ti/am335x/libam335x.o
+END GROUP
+LOAD /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+LOAD /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a
+LOAD /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a
+OUTPUT(u-boot elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x25
+ .ARM.attributes
+                0x00000000       0x17 arch/arm/cpu/armv7/start.o
+ .ARM.attributes
+                0x00000017       0x29 arch/arm/cpu/armv7/libarmv7.o
+ .ARM.attributes
+                0x00000040       0x25 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .ARM.attributes
+                0x00000065       0x27 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .ARM.attributes
+                0x0000008c       0x29 arch/arm/lib/libarm.o
+ .ARM.attributes
+                0x000000b5       0x29 common/libcommon.o
+ .ARM.attributes
+                0x000000de       0x29 disk/libdisk.o
+ .ARM.attributes
+                0x00000107       0x29 drivers/i2c/libi2c.o
+ .ARM.attributes
+                0x00000130       0x29 drivers/mmc/libmmc.o
+ .ARM.attributes
+                0x00000159       0x29 drivers/mtd/libmtd.o
+ .ARM.attributes
+                0x00000182       0x29 drivers/mtd/nand/libnand.o
+ .ARM.attributes
+                0x000001ab       0x29 drivers/mtd/spi/libspi_flash.o
+ .ARM.attributes
+                0x000001d4       0x29 drivers/net/libnet.o
+ .ARM.attributes
+                0x000001fd       0x27 drivers/pcmcia/libpcmcia.o
+ .ARM.attributes
+                0x00000224       0x27 drivers/rtc/librtc.o
+ .ARM.attributes
+                0x0000024b       0x29 drivers/serial/libserial.o
+ .ARM.attributes
+                0x00000274       0x29 drivers/spi/libspi.o
+ .ARM.attributes
+                0x0000029d       0x29 fs/ext2/libext2fs.o
+ .ARM.attributes
+                0x000002c6       0x29 fs/fat/libfat.o
+ .ARM.attributes
+                0x000002ef       0x29 lib/libgeneric.o
+ .ARM.attributes
+                0x00000318       0x29 lib/zlib/libz.o
+ .ARM.attributes
+                0x00000341       0x29 net/libnet.o
+ .ARM.attributes
+                0x0000036a       0x29 board/ti/am335x/libam335x.o
+ .ARM.attributes
+                0x00000393       0x29 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .ARM.attributes
+                0x000003bc       0x18 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000003d4       0x18 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000003ec       0x18 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .ARM.attributes
+                0x00000404       0x18 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .ARM.attributes
+                0x0000041c       0x18 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .ARM.attributes
+                0x00000434       0x18 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 arch/arm/cpu/armv7/libarmv7.o
+ .note.GNU-stack
+                0x00000000        0x0 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .note.GNU-stack
+                0x00000000        0x0 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .note.GNU-stack
+                0x00000000        0x0 arch/arm/lib/libarm.o
+ .note.GNU-stack
+                0x00000000        0x0 common/libcommon.o
+ .note.GNU-stack
+                0x00000000        0x0 disk/libdisk.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/i2c/libi2c.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/mmc/libmmc.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/mtd/libmtd.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/mtd/nand/libnand.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/mtd/spi/libspi_flash.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/net/libnet.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/pcmcia/libpcmcia.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/rtc/librtc.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/serial/libserial.o
+ .note.GNU-stack
+                0x00000000        0x0 drivers/spi/libspi.o
+ .note.GNU-stack
+                0x00000000        0x0 fs/ext2/libext2fs.o
+ .note.GNU-stack
+                0x00000000        0x0 fs/fat/libfat.o
+ .note.GNU-stack
+                0x00000000        0x0 lib/libgeneric.o
+ .note.GNU-stack
+                0x00000000        0x0 lib/zlib/libz.o
+ .note.GNU-stack
+                0x00000000        0x0 net/libnet.o
+ .note.GNU-stack
+                0x00000000        0x0 board/ti/am335x/libam335x.o
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.comment        0x00000000       0x27
+ .comment       0x00000000       0x27 arch/arm/cpu/armv7/libarmv7.o
+                                 0x78 (size before relaxing)
+ .comment       0x00000000       0x50 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .comment       0x00000000       0xa0 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .comment       0x00000000       0xf0 arch/arm/lib/libarm.o
+ .comment       0x00000000      0x640 common/libcommon.o
+ .comment       0x00000000       0x50 disk/libdisk.o
+ .comment       0x00000000       0x28 drivers/i2c/libi2c.o
+ .comment       0x00000000       0x50 drivers/mmc/libmmc.o
+ .comment       0x00000000       0x28 drivers/mtd/libmtd.o
+ .comment       0x00000000      0x118 drivers/mtd/nand/libnand.o
+ .comment       0x00000000       0x50 drivers/mtd/spi/libspi_flash.o
+ .comment       0x00000000       0x28 drivers/net/libnet.o
+ .comment       0x00000000       0x50 drivers/pcmcia/libpcmcia.o
+ .comment       0x00000000       0x28 drivers/rtc/librtc.o
+ .comment       0x00000000       0x50 drivers/serial/libserial.o
+ .comment       0x00000000       0x28 drivers/spi/libspi.o
+ .comment       0x00000000       0x50 fs/ext2/libext2fs.o
+ .comment       0x00000000       0x50 fs/fat/libfat.o
+ .comment       0x00000000      0x2a8 lib/libgeneric.o
+ .comment       0x00000000       0x28 lib/zlib/libz.o
+ .comment       0x00000000       0xc8 net/libnet.o
+ .comment       0x00000000       0x78 board/ti/am335x/libam335x.o
+ .comment       0x00000000       0x28 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+
+.debug_line     0x00000000    0x1077a
+ .debug_line    0x00000000       0xb4 arch/arm/cpu/armv7/start.o
+ .debug_line    0x000000b4      0x2c8 arch/arm/cpu/armv7/libarmv7.o
+ .debug_line    0x0000037c      0x2a9 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_line    0x00000625      0x422 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_line    0x00000a47      0x91b arch/arm/lib/libarm.o
+ .debug_line    0x00001362     0x5ad8 common/libcommon.o
+ .debug_line    0x00006e3a      0x41b disk/libdisk.o
+ .debug_line    0x00007255      0x309 drivers/i2c/libi2c.o
+ .debug_line    0x0000755e      0xa31 drivers/mmc/libmmc.o
+ .debug_line    0x00007f8f      0x24c drivers/mtd/libmtd.o
+ .debug_line    0x000081db     0x21cd drivers/mtd/nand/libnand.o
+ .debug_line    0x0000a3a8      0x45f drivers/mtd/spi/libspi_flash.o
+ .debug_line    0x0000a807      0x599 drivers/net/libnet.o
+ .debug_line    0x0000ada0       0x3a drivers/pcmcia/libpcmcia.o
+ .debug_line    0x0000adda       0x1d drivers/rtc/librtc.o
+ .debug_line    0x0000adf7      0x361 drivers/serial/libserial.o
+ .debug_line    0x0000b158      0x213 drivers/spi/libspi.o
+ .debug_line    0x0000b36b      0x4f8 fs/ext2/libext2fs.o
+ .debug_line    0x0000b863      0x75c fs/fat/libfat.o
+ .debug_line    0x0000bfbf     0x1d35 lib/libgeneric.o
+ .debug_line    0x0000dcf4      0xacb lib/zlib/libz.o
+ .debug_line    0x0000e7bf     0x146c net/libnet.o
+ .debug_line    0x0000fc2b      0x58b board/ti/am335x/libam335x.o
+ .debug_line    0x000101b6       0x41 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .debug_line    0x000101f7      0x101 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_line    0x000102f8      0x10d /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_line    0x00010405       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_line    0x000104e3       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_line    0x000105c1       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_line    0x0001069f       0xdb /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.debug_info     0x00000000    0x3a0f9
+ .debug_info    0x00000000       0x89 arch/arm/cpu/armv7/start.o
+ .debug_info    0x00000089      0xa91 arch/arm/cpu/armv7/libarmv7.o
+ .debug_info    0x00000b1a      0x750 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_info    0x0000126a     0x102e arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_info    0x00002298     0x2089 arch/arm/lib/libarm.o
+ .debug_info    0x00004321    0x1399e common/libcommon.o
+ .debug_info    0x00017cbf      0xeb2 disk/libdisk.o
+ .debug_info    0x00018b71      0xdf1 drivers/i2c/libi2c.o
+ .debug_info    0x00019962     0x2fee drivers/mmc/libmmc.o
+ .debug_info    0x0001c950      0x9a6 drivers/mtd/libmtd.o
+ .debug_info    0x0001d2f6     0xaffc drivers/mtd/nand/libnand.o
+ .debug_info    0x000282f2      0xc44 drivers/mtd/spi/libspi_flash.o
+ .debug_info    0x00028f36     0x1ae3 drivers/net/libnet.o
+ .debug_info    0x0002aa19       0xe6 drivers/pcmcia/libpcmcia.o
+ .debug_info    0x0002aaff       0x73 drivers/rtc/librtc.o
+ .debug_info    0x0002ab72      0xe27 drivers/serial/libserial.o
+ .debug_info    0x0002b999      0x9ea drivers/spi/libspi.o
+ .debug_info    0x0002c383     0x130e fs/ext2/libext2fs.o
+ .debug_info    0x0002d691     0x16c9 fs/fat/libfat.o
+ .debug_info    0x0002ed5a     0x399c lib/libgeneric.o
+ .debug_info    0x000326f6     0x1025 lib/zlib/libz.o
+ .debug_info    0x0003371b     0x428d net/libnet.o
+ .debug_info    0x000379a8     0x1d07 board/ti/am335x/libam335x.o
+ .debug_info    0x000396af       0xb4 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .debug_info    0x00039763      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_info    0x000398fc      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_info    0x00039a95      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_info    0x00039c2e      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_info    0x00039dc7      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_info    0x00039f60      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.debug_abbrev   0x00000000     0xc8b9
+ .debug_abbrev  0x00000000       0x14 arch/arm/cpu/armv7/start.o
+ .debug_abbrev  0x00000014      0x393 arch/arm/cpu/armv7/libarmv7.o
+ .debug_abbrev  0x000003a7      0x26b arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_abbrev  0x00000612      0x496 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_abbrev  0x00000aa8      0x964 arch/arm/lib/libarm.o
+ .debug_abbrev  0x0000140c     0x4b55 common/libcommon.o
+ .debug_abbrev  0x00005f61      0x43d disk/libdisk.o
+ .debug_abbrev  0x0000639e      0x276 drivers/i2c/libi2c.o
+ .debug_abbrev  0x00006614      0x83e drivers/mmc/libmmc.o
+ .debug_abbrev  0x00006e52      0x1b7 drivers/mtd/libmtd.o
+ .debug_abbrev  0x00007009     0x1409 drivers/mtd/nand/libnand.o
+ .debug_abbrev  0x00008412      0x3d0 drivers/mtd/spi/libspi_flash.o
+ .debug_abbrev  0x000087e2      0x39f drivers/net/libnet.o
+ .debug_abbrev  0x00008b81       0x54 drivers/pcmcia/libpcmcia.o
+ .debug_abbrev  0x00008bd5       0x2a drivers/rtc/librtc.o
+ .debug_abbrev  0x00008bff      0x362 drivers/serial/libserial.o
+ .debug_abbrev  0x00008f61      0x2a7 drivers/spi/libspi.o
+ .debug_abbrev  0x00009208      0x3f5 fs/ext2/libext2fs.o
+ .debug_abbrev  0x000095fd      0x4e7 fs/fat/libfat.o
+ .debug_abbrev  0x00009ae4     0x1406 lib/libgeneric.o
+ .debug_abbrev  0x0000aeea      0x34b lib/zlib/libz.o
+ .debug_abbrev  0x0000b235     0x1089 net/libnet.o
+ .debug_abbrev  0x0000c2be      0x51c board/ti/am335x/libam335x.o
+ .debug_abbrev  0x0000c7da       0x67 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .debug_abbrev  0x0000c841       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000c855       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x0000c869       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_abbrev  0x0000c87d       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_abbrev  0x0000c891       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_abbrev  0x0000c8a5       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.debug_aranges  0x00000000      0xda0
+ .debug_aranges
+                0x00000000       0x20 arch/arm/cpu/armv7/start.o
+ .debug_aranges
+                0x00000020       0x60 arch/arm/cpu/armv7/libarmv7.o
+ .debug_aranges
+                0x00000080       0x60 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_aranges
+                0x000000e0       0xa0 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_aranges
+                0x00000180       0xc0 arch/arm/lib/libarm.o
+ .debug_aranges
+                0x00000240      0x4c0 common/libcommon.o
+ .debug_aranges
+                0x00000700       0x40 disk/libdisk.o
+ .debug_aranges
+                0x00000740       0x20 drivers/i2c/libi2c.o
+ .debug_aranges
+                0x00000760       0x40 drivers/mmc/libmmc.o
+ .debug_aranges
+                0x000007a0       0x20 drivers/mtd/libmtd.o
+ .debug_aranges
+                0x000007c0       0xc0 drivers/mtd/nand/libnand.o
+ .debug_aranges
+                0x00000880       0x40 drivers/mtd/spi/libspi_flash.o
+ .debug_aranges
+                0x000008c0       0x20 drivers/net/libnet.o
+ .debug_aranges
+                0x000008e0       0x40 drivers/serial/libserial.o
+ .debug_aranges
+                0x00000920       0x20 drivers/spi/libspi.o
+ .debug_aranges
+                0x00000940       0x40 fs/ext2/libext2fs.o
+ .debug_aranges
+                0x00000980       0x40 fs/fat/libfat.o
+ .debug_aranges
+                0x000009c0      0x1e0 lib/libgeneric.o
+ .debug_aranges
+                0x00000ba0       0x20 lib/zlib/libz.o
+ .debug_aranges
+                0x00000bc0       0xa0 net/libnet.o
+ .debug_aranges
+                0x00000c60       0x60 board/ti/am335x/libam335x.o
+ .debug_aranges
+                0x00000cc0       0x20 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .debug_aranges
+                0x00000ce0       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00000d00       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000d20       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_aranges
+                0x00000d40       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_aranges
+                0x00000d60       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_aranges
+                0x00000d80       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+
+.debug_pubnames
+                0x00000000     0x39cf
+ .debug_pubnames
+                0x00000000      0x1ef arch/arm/cpu/armv7/libarmv7.o
+ .debug_pubnames
+                0x000001ef       0x95 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_pubnames
+                0x00000284      0x112 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_pubnames
+                0x00000396      0x37e arch/arm/lib/libarm.o
+ .debug_pubnames
+                0x00000714     0x17c5 common/libcommon.o
+ .debug_pubnames
+                0x00001ed9       0xb9 disk/libdisk.o
+ .debug_pubnames
+                0x00001f92       0x77 drivers/i2c/libi2c.o
+ .debug_pubnames
+                0x00002009      0x23f drivers/mmc/libmmc.o
+ .debug_pubnames
+                0x00002248       0x82 drivers/mtd/libmtd.o
+ .debug_pubnames
+                0x000022ca      0x27a drivers/mtd/nand/libnand.o
+ .debug_pubnames
+                0x00002544      0x14c drivers/mtd/spi/libspi_flash.o
+ .debug_pubnames
+                0x00002690       0x24 drivers/net/libnet.o
+ .debug_pubnames
+                0x000026b4      0x164 drivers/serial/libserial.o
+ .debug_pubnames
+                0x00002818       0xde drivers/spi/libspi.o
+ .debug_pubnames
+                0x000028f6      0x187 fs/ext2/libext2fs.o
+ .debug_pubnames
+                0x00002a7d      0x123 fs/fat/libfat.o
+ .debug_pubnames
+                0x00002ba0      0x559 lib/libgeneric.o
+ .debug_pubnames
+                0x000030f9       0xb4 lib/zlib/libz.o
+ .debug_pubnames
+                0x000031ad      0x668 net/libnet.o
+ .debug_pubnames
+                0x00003815      0x183 board/ti/am335x/libam335x.o
+ .debug_pubnames
+                0x00003998       0x37 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+
+.debug_frame    0x00000000     0x5bf0
+ .debug_frame   0x00000000      0x1e0 arch/arm/cpu/armv7/libarmv7.o
+ .debug_frame   0x000001e0       0xe8 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_frame   0x000002c8      0x108 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_frame   0x000003d0      0x3e0 arch/arm/lib/libarm.o
+ .debug_frame   0x000007b0     0x2090 common/libcommon.o
+ .debug_frame   0x00002840      0x174 disk/libdisk.o
+ .debug_frame   0x000029b4      0x108 drivers/i2c/libi2c.o
+ .debug_frame   0x00002abc      0x424 drivers/mmc/libmmc.o
+ .debug_frame   0x00002ee0       0x7c drivers/mtd/libmtd.o
+ .debug_frame   0x00002f5c      0xb88 drivers/mtd/nand/libnand.o
+ .debug_frame   0x00003ae4      0x1e0 drivers/mtd/spi/libspi_flash.o
+ .debug_frame   0x00003cc4      0x29c drivers/net/libnet.o
+ .debug_frame   0x00003f60      0x190 drivers/serial/libserial.o
+ .debug_frame   0x000040f0      0x124 drivers/spi/libspi.o
+ .debug_frame   0x00004214      0x1a4 fs/ext2/libext2fs.o
+ .debug_frame   0x000043b8      0x24c fs/fat/libfat.o
+ .debug_frame   0x00004604      0x91c lib/libgeneric.o
+ .debug_frame   0x00004f20      0x11c lib/zlib/libz.o
+ .debug_frame   0x0000503c      0x910 net/libnet.o
+ .debug_frame   0x0000594c      0x22c board/ti/am335x/libam335x.o
+ .debug_frame   0x00005b78       0x38 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+ .debug_frame   0x00005bb0       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00005bd0       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+
+.debug_str      0x00000000     0x96fe
+ .debug_str     0x00000000      0x3c6 arch/arm/cpu/armv7/libarmv7.o
+                                0x695 (size before relaxing)
+ .debug_str     0x000003c6      0x246 arch/arm/cpu/armv7/omap-common/libomap-common.o
+                                0x44e (size before relaxing)
+ .debug_str     0x0000060c      0x3a3 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+                                0x7e6 (size before relaxing)
+ .debug_str     0x000009af      0x7e4 arch/arm/lib/libarm.o
+                               0x1373 (size before relaxing)
+ .debug_str     0x00001193     0x312c common/libcommon.o
+                               0x8b6d (size before relaxing)
+ .debug_str     0x000042bf      0x25a disk/libdisk.o
+                                0x701 (size before relaxing)
+ .debug_str     0x00004519      0x113 drivers/i2c/libi2c.o
+                                0x34c (size before relaxing)
+ .debug_str     0x0000462c      0x3a7 drivers/mmc/libmmc.o
+                                0xac0 (size before relaxing)
+ .debug_str     0x000049d3       0xc7 drivers/mtd/libmtd.o
+                                0x4f6 (size before relaxing)
+ .debug_str     0x00004a9a      0xf0a drivers/mtd/nand/libnand.o
+                               0x411e (size before relaxing)
+ .debug_str     0x000059a4      0x298 drivers/mtd/spi/libspi_flash.o
+                                0x5bc (size before relaxing)
+ .debug_str     0x00005c3c      0x727 drivers/net/libnet.o
+                                0x99c (size before relaxing)
+ .debug_str     0x00006363       0x72 drivers/pcmcia/libpcmcia.o
+                                0x21d (size before relaxing)
+ .debug_str     0x000063d5       0x59 drivers/rtc/librtc.o
+                                0x104 (size before relaxing)
+ .debug_str     0x0000642e      0x25d drivers/serial/libserial.o
+                                0x70b (size before relaxing)
+ .debug_str     0x0000668b      0x13b drivers/spi/libspi.o
+                                0x2aa (size before relaxing)
+ .debug_str     0x000067c6      0x611 fs/ext2/libext2fs.o
+                                0x9ac (size before relaxing)
+ .debug_str     0x00006dd7      0x552 fs/fat/libfat.o
+                                0x8db (size before relaxing)
+ .debug_str     0x00007329      0x6ad lib/libgeneric.o
+                               0x19c4 (size before relaxing)
+ .debug_str     0x000079d6      0x30b lib/zlib/libz.o
+                                0x5a8 (size before relaxing)
+ .debug_str     0x00007ce1      0xe42 net/libnet.o
+                               0x1aca (size before relaxing)
+ .debug_str     0x00008b23      0xba9 board/ti/am335x/libam335x.o
+                               0x12c0 (size before relaxing)
+ .debug_str     0x000096cc       0x32 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+                                0x130 (size before relaxing)
+
+.debug_loc      0x00000000    0x2b3dd
+ .debug_loc     0x00000000      0x692 arch/arm/cpu/armv7/libarmv7.o
+ .debug_loc     0x00000692      0x27f arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_loc     0x00000911      0x593 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_loc     0x00000ea4      0x8e0 arch/arm/lib/libarm.o
+ .debug_loc     0x00001784     0xef2b common/libcommon.o
+ .debug_loc     0x000106af      0x7da disk/libdisk.o
+ .debug_loc     0x00010e89      0xadd drivers/i2c/libi2c.o
+ .debug_loc     0x00011966     0x23f1 drivers/mmc/libmmc.o
+ .debug_loc     0x00013d57      0x252 drivers/mtd/libmtd.o
+ .debug_loc     0x00013fa9     0x7b60 drivers/mtd/nand/libnand.o
+ .debug_loc     0x0001bb09      0xb11 drivers/mtd/spi/libspi_flash.o
+ .debug_loc     0x0001c61a     0x12de drivers/net/libnet.o
+ .debug_loc     0x0001d8f8      0x280 drivers/serial/libserial.o
+ .debug_loc     0x0001db78      0x903 drivers/spi/libspi.o
+ .debug_loc     0x0001e47b      0xd9a fs/ext2/libext2fs.o
+ .debug_loc     0x0001f215     0x19af fs/fat/libfat.o
+ .debug_loc     0x00020bc4     0x4563 lib/libgeneric.o
+ .debug_loc     0x00025127     0x26a9 lib/zlib/libz.o
+ .debug_loc     0x000277d0     0x2ba4 net/libnet.o
+ .debug_loc     0x0002a374     0x102b board/ti/am335x/libam335x.o
+ .debug_loc     0x0002b39f       0x3e /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+
+.debug_pubtypes
+                0x00000000     0x3daf
+ .debug_pubtypes
+                0x00000000       0x56 arch/arm/cpu/armv7/libarmv7.o
+ .debug_pubtypes
+                0x00000056       0x8f arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_pubtypes
+                0x000000e5       0xca arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_pubtypes
+                0x000001af      0x3a0 arch/arm/lib/libarm.o
+ .debug_pubtypes
+                0x0000054f     0x1621 common/libcommon.o
+ .debug_pubtypes
+                0x00001b70      0x186 disk/libdisk.o
+ .debug_pubtypes
+                0x00001cf6       0x84 drivers/i2c/libi2c.o
+ .debug_pubtypes
+                0x00001d7a      0x1a0 drivers/mmc/libmmc.o
+ .debug_pubtypes
+                0x00001f1a      0x16d drivers/mtd/libmtd.o
+ .debug_pubtypes
+                0x00002087      0xcd9 drivers/mtd/nand/libnand.o
+ .debug_pubtypes
+                0x00002d60      0x101 drivers/mtd/spi/libspi_flash.o
+ .debug_pubtypes
+                0x00002e61      0x134 drivers/net/libnet.o
+ .debug_pubtypes
+                0x00002f95       0x24 drivers/pcmcia/libpcmcia.o
+ .debug_pubtypes
+                0x00002fb9       0x12 drivers/rtc/librtc.o
+ .debug_pubtypes
+                0x00002fcb       0xb1 drivers/serial/libserial.o
+ .debug_pubtypes
+                0x0000307c       0x5f drivers/spi/libspi.o
+ .debug_pubtypes
+                0x000030db      0x15b fs/ext2/libext2fs.o
+ .debug_pubtypes
+                0x00003236      0x17d fs/fat/libfat.o
+ .debug_pubtypes
+                0x000033b3      0x4ac lib/libgeneric.o
+ .debug_pubtypes
+                0x0000385f      0x11e lib/zlib/libz.o
+ .debug_pubtypes
+                0x0000397d      0x2b5 net/libnet.o
+ .debug_pubtypes
+                0x00003c32      0x16b board/ti/am335x/libam335x.o
+ .debug_pubtypes
+                0x00003d9d       0x12 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/arch/arm/lib/eabi_compat.o
+
+.debug_ranges   0x00000000     0x20e0
+ .debug_ranges  0x00000000       0x90 arch/arm/cpu/armv7/libarmv7.o
+ .debug_ranges  0x00000090       0x30 arch/arm/cpu/armv7/omap-common/libomap-common.o
+ .debug_ranges  0x000000c0       0x80 arch/arm/cpu/armv7/ti81xx/libti81xx.o
+ .debug_ranges  0x00000140       0xd8 arch/arm/lib/libarm.o
+ .debug_ranges  0x00000218      0x820 common/libcommon.o
+ .debug_ranges  0x00000a38       0x18 disk/libdisk.o
+ .debug_ranges  0x00000a50      0x258 drivers/i2c/libi2c.o
+ .debug_ranges  0x00000ca8      0x3e8 drivers/mmc/libmmc.o
+ .debug_ranges  0x00001090      0x668 drivers/mtd/nand/libnand.o
+ .debug_ranges  0x000016f8       0x38 drivers/mtd/spi/libspi_flash.o
+ .debug_ranges  0x00001730      0x1b0 drivers/net/libnet.o
+ .debug_ranges  0x000018e0       0x60 drivers/serial/libserial.o
+ .debug_ranges  0x00001940       0x30 drivers/spi/libspi.o
+ .debug_ranges  0x00001970      0x100 fs/ext2/libext2fs.o
+ .debug_ranges  0x00001a70      0x160 fs/fat/libfat.o
+ .debug_ranges  0x00001bd0      0x298 lib/libgeneric.o
+ .debug_ranges  0x00001e68       0x60 lib/zlib/libz.o
+ .debug_ranges  0x00001ec8      0x218 net/libnet.o
