@@ -37,6 +37,8 @@
 #include <i2c.h>
 #include <serial.h>
 
+extern int fn_lcd_init(void);
+
 DECLARE_GLOBAL_DATA_PTR;
 
 /* UART Defines */
@@ -704,6 +706,10 @@ int board_init(void)
 
 	gpmc_init();
 
+#if (LSD_DEBUG > 0)
+	printf("lierda debug:enter File=board/ti/am335x/evm.c,Function=board_init line1\n");	
+#endif
+
 	return 0;
 
 err_out:
@@ -722,6 +728,12 @@ err_out:
 #endif
 
 	gpmc_init();
+
+#if (LSD_DEBUG > 0)
+	printf("lierda debug:enter File=board/ti/am335x/evm.c,Function=board_init line2\n");	
+#endif
+
+	fn_lcd_init();
 
 	return 0;
 }
