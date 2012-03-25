@@ -163,9 +163,7 @@ Discarded input sections
  .text.RasterIdleModeConfig
                 0x00000000       0x1c board/ti/am335x/libam335x.o
  .text.fn_lcd_init
-                0x00000000      0x1ec board/ti/am335x/libam335x.o
- .rodata.image1
-                0x00000000   0x177020 board/ti/am335x/libam335x.o
+                0x00000000      0x290 board/ti/am335x/libam335x.o
  .data          0x00000000        0x0 board/ti/am335x/libam335x.o
  .data.cpsw_slaves
                 0x00000000       0x18 board/ti/am335x/libam335x.o
@@ -208,13 +206,16 @@ Discarded input sections
                 0x00000000        0xc board/ti/am335x/libam335x.o
  .data.rgmii1_pin_mux
                 0x00000000       0x3c board/ti/am335x/libam335x.o
+ .data.logo_linux_clut224_clut
+                0x00000000      0x294 board/ti/am335x/libam335x.o
+ .data.logo_linux_clut224_data
+                0x00000000    0x96000 board/ti/am335x/libam335x.o
  .bss           0x00000000        0x0 board/ti/am335x/libam335x.o
  .bss.daughter_board_connected
                 0x00000000        0x1 board/ti/am335x/libam335x.o
- .bss.cnt1.4906
-                0x00000000        0x4 board/ti/am335x/libam335x.o
- .bss.cnt2.4907
-                0x00000000        0x4 board/ti/am335x/libam335x.o
+ .bss.cnt1      0x00000000        0x4 board/ti/am335x/libam335x.o
+ .bss.cnt2      0x00000000        0x4 board/ti/am335x/libam335x.o
+ .bss.image1    0x00000000        0x4 board/ti/am335x/libam335x.o
  .text          0x00000000        0x0 common/libcommon.o
  .text.console_setfile
                 0x00000000       0xa4 common/libcommon.o
@@ -1224,7 +1225,7 @@ OUTPUT(u-boot-spl elf32-littlearm)
                                  0x28 (size before relaxing)
  .comment       0x00000000       0xf0 arch/arm/cpu/armv7/omap-common/libomap-common.o
  .comment       0x00000000       0xa0 arch/arm/cpu/armv7/ti81xx/libti81xx.o
- .comment       0x00000000       0xf0 board/ti/am335x/libam335x.o
+ .comment       0x00000000      0x118 board/ti/am335x/libam335x.o
  .comment       0x00000000       0xa0 common/libcommon.o
  .comment       0x00000000       0x50 disk/libdisk.o
  .comment       0x00000000       0x28 drivers/i2c/libi2c.o
@@ -1235,71 +1236,71 @@ OUTPUT(u-boot-spl elf32-littlearm)
  .comment       0x00000000       0xf0 lib/libgeneric.o
  .comment       0x00000000       0x28 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
 
-.debug_line     0x00000000     0x7460
+.debug_line     0x00000000     0x74b1
  .debug_line    0x00000000       0x87 arch/arm/cpu/armv7/start.o
  .debug_line    0x00000087       0xce arch/arm/cpu/armv7/libarmv7.o
  .debug_line    0x00000155      0xa9d arch/arm/cpu/armv7/omap-common/libomap-common.o
  .debug_line    0x00000bf2      0x539 arch/arm/cpu/armv7/ti81xx/libti81xx.o
- .debug_line    0x0000112b      0xcaa board/ti/am335x/libam335x.o
- .debug_line    0x00001dd5      0xa90 common/libcommon.o
- .debug_line    0x00002865      0x498 disk/libdisk.o
- .debug_line    0x00002cfd      0x373 drivers/i2c/libi2c.o
- .debug_line    0x00003070      0xc62 drivers/mmc/libmmc.o
- .debug_line    0x00003cd2     0x1890 drivers/mtd/nand/libnand.o
- .debug_line    0x00005562      0x453 drivers/serial/libserial.o
- .debug_line    0x000059b5      0x6a5 fs/fat/libfat.o
- .debug_line    0x0000605a      0xe34 lib/libgeneric.o
- .debug_line    0x00006e8e       0x4f /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
- .debug_line    0x00006edd      0x101 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
- .debug_line    0x00006fde      0x10d /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
- .debug_line    0x000070eb       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
- .debug_line    0x000071c9       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
- .debug_line    0x000072a7       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
- .debug_line    0x00007385       0xdb /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+ .debug_line    0x0000112b      0xcfb board/ti/am335x/libam335x.o
+ .debug_line    0x00001e26      0xa90 common/libcommon.o
+ .debug_line    0x000028b6      0x498 disk/libdisk.o
+ .debug_line    0x00002d4e      0x373 drivers/i2c/libi2c.o
+ .debug_line    0x000030c1      0xc62 drivers/mmc/libmmc.o
+ .debug_line    0x00003d23     0x1890 drivers/mtd/nand/libnand.o
+ .debug_line    0x000055b3      0x453 drivers/serial/libserial.o
+ .debug_line    0x00005a06      0x6a5 fs/fat/libfat.o
+ .debug_line    0x000060ab      0xe34 lib/libgeneric.o
+ .debug_line    0x00006edf       0x4f /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+ .debug_line    0x00006f2e      0x101 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000702f      0x10d /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_line    0x0000713c       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_line    0x0000721a       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_line    0x000072f8       0xde /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_line    0x000073d6       0xdb /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
 
-.debug_info     0x00000000    0x17a0b
+.debug_info     0x00000000    0x17b4d
  .debug_info    0x00000000       0x89 arch/arm/cpu/armv7/start.o
  .debug_info    0x00000089      0x1d1 arch/arm/cpu/armv7/libarmv7.o
  .debug_info    0x0000025a     0x1d22 arch/arm/cpu/armv7/omap-common/libomap-common.o
  .debug_info    0x00001f7c     0x109f arch/arm/cpu/armv7/ti81xx/libti81xx.o
- .debug_info    0x0000301b     0x2ad7 board/ti/am335x/libam335x.o
- .debug_info    0x00005af2     0x1c55 common/libcommon.o
- .debug_info    0x00007747      0xeba disk/libdisk.o
- .debug_info    0x00008601      0xdf5 drivers/i2c/libi2c.o
- .debug_info    0x000093f6     0x2ff6 drivers/mmc/libmmc.o
- .debug_info    0x0000c3ec     0x70ac drivers/mtd/nand/libnand.o
- .debug_info    0x00013498      0xe2f drivers/serial/libserial.o
- .debug_info    0x000142c7     0x1347 fs/fat/libfat.o
- .debug_info    0x0001560e     0x19af lib/libgeneric.o
- .debug_info    0x00016fbd       0xb8 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
- .debug_info    0x00017075      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
- .debug_info    0x0001720e      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
- .debug_info    0x000173a7      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
- .debug_info    0x00017540      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
- .debug_info    0x000176d9      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
- .debug_info    0x00017872      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+ .debug_info    0x0000301b     0x2c19 board/ti/am335x/libam335x.o
+ .debug_info    0x00005c34     0x1c55 common/libcommon.o
+ .debug_info    0x00007889      0xeba disk/libdisk.o
+ .debug_info    0x00008743      0xdf5 drivers/i2c/libi2c.o
+ .debug_info    0x00009538     0x2ff6 drivers/mmc/libmmc.o
+ .debug_info    0x0000c52e     0x70ac drivers/mtd/nand/libnand.o
+ .debug_info    0x000135da      0xe2f drivers/serial/libserial.o
+ .debug_info    0x00014409     0x1347 fs/fat/libfat.o
+ .debug_info    0x00015750     0x19af lib/libgeneric.o
+ .debug_info    0x000170ff       0xb8 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+ .debug_info    0x000171b7      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_info    0x00017350      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_info    0x000174e9      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_info    0x00017682      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_info    0x0001781b      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_info    0x000179b4      0x199 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
 
-.debug_abbrev   0x00000000     0x494b
+.debug_abbrev   0x00000000     0x49d0
  .debug_abbrev  0x00000000       0x14 arch/arm/cpu/armv7/start.o
  .debug_abbrev  0x00000014       0xd5 arch/arm/cpu/armv7/libarmv7.o
  .debug_abbrev  0x000000e9      0x898 arch/arm/cpu/armv7/omap-common/libomap-common.o
  .debug_abbrev  0x00000981      0x504 arch/arm/cpu/armv7/ti81xx/libti81xx.o
- .debug_abbrev  0x00000e85      0x8a9 board/ti/am335x/libam335x.o
- .debug_abbrev  0x0000172e      0x889 common/libcommon.o
- .debug_abbrev  0x00001fb7      0x441 disk/libdisk.o
- .debug_abbrev  0x000023f8      0x278 drivers/i2c/libi2c.o
- .debug_abbrev  0x00002670      0x842 drivers/mmc/libmmc.o
- .debug_abbrev  0x00002eb2      0xc35 drivers/mtd/nand/libnand.o
- .debug_abbrev  0x00003ae7      0x366 drivers/serial/libserial.o
- .debug_abbrev  0x00003e4d      0x321 fs/fat/libfat.o
- .debug_abbrev  0x0000416e      0x6fc lib/libgeneric.o
- .debug_abbrev  0x0000486a       0x69 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
- .debug_abbrev  0x000048d3       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x000048e7       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
- .debug_abbrev  0x000048fb       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
- .debug_abbrev  0x0000490f       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
- .debug_abbrev  0x00004923       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
- .debug_abbrev  0x00004937       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
+ .debug_abbrev  0x00000e85      0x92e board/ti/am335x/libam335x.o
+ .debug_abbrev  0x000017b3      0x889 common/libcommon.o
+ .debug_abbrev  0x0000203c      0x441 disk/libdisk.o
+ .debug_abbrev  0x0000247d      0x278 drivers/i2c/libi2c.o
+ .debug_abbrev  0x000026f5      0x842 drivers/mmc/libmmc.o
+ .debug_abbrev  0x00002f37      0xc35 drivers/mtd/nand/libnand.o
+ .debug_abbrev  0x00003b6c      0x366 drivers/serial/libserial.o
+ .debug_abbrev  0x00003ed2      0x321 fs/fat/libfat.o
+ .debug_abbrev  0x000041f3      0x6fc lib/libgeneric.o
+ .debug_abbrev  0x000048ef       0x69 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+ .debug_abbrev  0x00004958       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000496c       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00004980       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_lshrdi3.o)
+ .debug_abbrev  0x00004994       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashrdi3.o)
+ .debug_abbrev  0x000049a8       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_ashldi3.o)
+ .debug_abbrev  0x000049bc       0x14 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
 
 .debug_aranges  0x00000000      0xff0
  .debug_aranges
@@ -1344,7 +1345,7 @@ OUTPUT(u-boot-spl elf32-littlearm)
                 0x00000fd0       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_dvmd_lnx.o)
 
 .debug_pubnames
-                0x00000000     0x1654
+                0x00000000     0x169e
  .debug_pubnames
                 0x00000000       0x38 arch/arm/cpu/armv7/libarmv7.o
  .debug_pubnames
@@ -1352,25 +1353,25 @@ OUTPUT(u-boot-spl elf32-littlearm)
  .debug_pubnames
                 0x00000204      0x163 arch/arm/cpu/armv7/ti81xx/libti81xx.o
  .debug_pubnames
-                0x00000367      0x6a9 board/ti/am335x/libam335x.o
+                0x00000367      0x6f3 board/ti/am335x/libam335x.o
  .debug_pubnames
-                0x00000a10      0x2d5 common/libcommon.o
+                0x00000a5a      0x2d5 common/libcommon.o
  .debug_pubnames
-                0x00000ce5       0xb9 disk/libdisk.o
+                0x00000d2f       0xb9 disk/libdisk.o
  .debug_pubnames
-                0x00000d9e       0x77 drivers/i2c/libi2c.o
+                0x00000de8       0x77 drivers/i2c/libi2c.o
  .debug_pubnames
-                0x00000e15      0x23f drivers/mmc/libmmc.o
+                0x00000e5f      0x23f drivers/mmc/libmmc.o
  .debug_pubnames
-                0x00001054      0x155 drivers/mtd/nand/libnand.o
+                0x0000109e      0x155 drivers/mtd/nand/libnand.o
  .debug_pubnames
-                0x000011a9      0x164 drivers/serial/libserial.o
+                0x000011f3      0x164 drivers/serial/libserial.o
  .debug_pubnames
-                0x0000130d       0xb9 fs/fat/libfat.o
+                0x00001357       0xb9 fs/fat/libfat.o
  .debug_pubnames
-                0x000013c6      0x257 lib/libgeneric.o
+                0x00001410      0x257 lib/libgeneric.o
  .debug_pubnames
-                0x0000161d       0x37 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+                0x00001667       0x37 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
 
 .debug_frame    0x00000000     0x25c4
  .debug_frame   0x00000000       0x50 arch/arm/cpu/armv7/libarmv7.o
@@ -1389,48 +1390,48 @@ OUTPUT(u-boot-spl elf32-littlearm)
  .debug_frame   0x00002584       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_udivsi3.o)
  .debug_frame   0x000025a4       0x20 /am335x/ti-sdk-am335x-evm/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/libgcc.a(_divsi3.o)
 
-.debug_str      0x00000000     0x454e
+.debug_str      0x00000000     0x45bf
  .debug_str     0x00000000      0x131 arch/arm/cpu/armv7/libarmv7.o
                                 0x175 (size before relaxing)
  .debug_str     0x00000131      0x648 arch/arm/cpu/armv7/omap-common/libomap-common.o
                                0x1195 (size before relaxing)
  .debug_str     0x00000779      0x3dc arch/arm/cpu/armv7/ti81xx/libti81xx.o
                                 0x819 (size before relaxing)
- .debug_str     0x00000b55     0x137a board/ti/am335x/libam335x.o
-                               0x1ace (size before relaxing)
- .debug_str     0x00001ecf      0x5b8 common/libcommon.o
+ .debug_str     0x00000b55     0x13eb board/ti/am335x/libam335x.o
+                               0x1c02 (size before relaxing)
+ .debug_str     0x00001f40      0x5b8 common/libcommon.o
                                 0xcef (size before relaxing)
- .debug_str     0x00002487      0x27a disk/libdisk.o
+ .debug_str     0x000024f8      0x27a disk/libdisk.o
                                 0x701 (size before relaxing)
- .debug_str     0x00002701      0x12a drivers/i2c/libi2c.o
+ .debug_str     0x00002772      0x12a drivers/i2c/libi2c.o
                                 0x34c (size before relaxing)
- .debug_str     0x0000282b      0x3c7 drivers/mmc/libmmc.o
+ .debug_str     0x0000289c      0x3c7 drivers/mmc/libmmc.o
                                 0xac0 (size before relaxing)
- .debug_str     0x00002bf2      0xef7 drivers/mtd/nand/libnand.o
+ .debug_str     0x00002c63      0xef7 drivers/mtd/nand/libnand.o
                                0x28a2 (size before relaxing)
- .debug_str     0x00003ae9      0x25d drivers/serial/libserial.o
+ .debug_str     0x00003b5a      0x25d drivers/serial/libserial.o
                                 0x70b (size before relaxing)
- .debug_str     0x00003d46      0x4dd fs/fat/libfat.o
+ .debug_str     0x00003db7      0x4dd fs/fat/libfat.o
                                 0x6e1 (size before relaxing)
- .debug_str     0x00004223      0x2a6 lib/libgeneric.o
+ .debug_str     0x00004294      0x2a6 lib/libgeneric.o
                                 0x947 (size before relaxing)
- .debug_str     0x000044c9       0x85 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+ .debug_str     0x0000453a       0x85 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
                                 0x130 (size before relaxing)
 
-.debug_loc      0x00000000     0xfe07
+.debug_loc      0x00000000     0xff35
  .debug_loc     0x00000000      0x13d arch/arm/cpu/armv7/libarmv7.o
  .debug_loc     0x0000013d      0x7aa arch/arm/cpu/armv7/omap-common/libomap-common.o
  .debug_loc     0x000008e7      0x5b3 arch/arm/cpu/armv7/ti81xx/libti81xx.o
- .debug_loc     0x00000e9a     0x181f board/ti/am335x/libam335x.o
- .debug_loc     0x000026b9     0x13f4 common/libcommon.o
- .debug_loc     0x00003aad      0x7da disk/libdisk.o
- .debug_loc     0x00004287      0xadd drivers/i2c/libi2c.o
- .debug_loc     0x00004d64     0x23f1 drivers/mmc/libmmc.o
- .debug_loc     0x00007155     0x4f5a drivers/mtd/nand/libnand.o
- .debug_loc     0x0000c0af      0x280 drivers/serial/libserial.o
- .debug_loc     0x0000c32f     0x160e fs/fat/libfat.o
- .debug_loc     0x0000d93d     0x248c lib/libgeneric.o
- .debug_loc     0x0000fdc9       0x3e /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+ .debug_loc     0x00000e9a     0x194d board/ti/am335x/libam335x.o
+ .debug_loc     0x000027e7     0x13f4 common/libcommon.o
+ .debug_loc     0x00003bdb      0x7da disk/libdisk.o
+ .debug_loc     0x000043b5      0xadd drivers/i2c/libi2c.o
+ .debug_loc     0x00004e92     0x23f1 drivers/mmc/libmmc.o
+ .debug_loc     0x00007283     0x4f5a drivers/mtd/nand/libnand.o
+ .debug_loc     0x0000c1dd      0x280 drivers/serial/libserial.o
+ .debug_loc     0x0000c45d     0x160e fs/fat/libfat.o
+ .debug_loc     0x0000da6b     0x248c lib/libgeneric.o
+ .debug_loc     0x0000fef7       0x3e /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
 
 .debug_pubtypes
                 0x00000000     0x1651
@@ -1461,17 +1462,17 @@ OUTPUT(u-boot-spl elf32-littlearm)
  .debug_pubtypes
                 0x0000163f       0x12 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
 
-.debug_ranges   0x00000000     0x1aa8
+.debug_ranges   0x00000000     0x1ac0
  .debug_ranges  0x00000000       0x20 arch/arm/cpu/armv7/libarmv7.o
  .debug_ranges  0x00000020      0x100 arch/arm/cpu/armv7/omap-common/libomap-common.o
  .debug_ranges  0x00000120      0x108 arch/arm/cpu/armv7/ti81xx/libti81xx.o
- .debug_ranges  0x00000228      0x2a8 board/ti/am335x/libam335x.o
- .debug_ranges  0x000004d0      0x1a0 common/libcommon.o
- .debug_ranges  0x00000670       0x88 disk/libdisk.o
- .debug_ranges  0x000006f8      0x2a8 drivers/i2c/libi2c.o
- .debug_ranges  0x000009a0      0x520 drivers/mmc/libmmc.o
- .debug_ranges  0x00000ec0      0x628 drivers/mtd/nand/libnand.o
- .debug_ranges  0x000014e8      0x108 drivers/serial/libserial.o
- .debug_ranges  0x000015f0      0x1a0 fs/fat/libfat.o
- .debug_ranges  0x00001790      0x300 lib/libgeneric.o
- .debug_ranges  0x00001a90       0x18 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o
+ .debug_ranges  0x00000228      0x2c0 board/ti/am335x/libam335x.o
+ .debug_ranges  0x000004e8      0x1a0 common/libcommon.o
+ .debug_ranges  0x00000688       0x88 disk/libdisk.o
+ .debug_ranges  0x00000710      0x2a8 drivers/i2c/libi2c.o
+ .debug_ranges  0x000009b8      0x520 drivers/mmc/libmmc.o
+ .debug_ranges  0x00000ed8      0x628 drivers/mtd/nand/libnand.o
+ .debug_ranges  0x00001500      0x108 drivers/serial/libserial.o
+ .debug_ranges  0x00001608      0x1a0 fs/fat/libfat.o
+ .debug_ranges  0x000017a8      0x300 lib/libgeneric.o
+ .debug_ranges  0x00001aa8       0x18 /am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/am335x/spl/arch/arm/lib/eabi_compat.o

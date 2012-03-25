@@ -40,6 +40,17 @@
 #include "tps65217.h"
 #include <i2c.h>
 #include <serial.h>
+#include <malloc.h>
+
+#if 0
+unsigned int image2[1024*600+8] __attribute__((aligned(4)))= {
+0x4000u, 0x0000u, 0x0000u, 0x0000u, 0x0000u, 0x0000u, 0x0000u, 0x0000u,
+};
+#endif
+extern unsigned char logo_linux_clut224_data[615096];
+extern unsigned char logo_linux_clut224_clut[660];
+#define M_IMAGE_SIZE (1024*600+8)
+unsigned int *image1;
 
 /******************************************************************************
 **                      INTERNAL FUNCTION PROTOTYPES
@@ -50,6 +61,8 @@ static void LCDAINTCConfigure(void);
 /******************************************************************************
 **              FUNCTION DEFINITIONS
 ******************************************************************************/
+static unsigned long cnt1=0;
+static unsigned long cnt2=0;
 	
 int fn_lcd_init(void)
 {
@@ -89,12 +102,95 @@ int fn_lcd_init(void)
 
 #if (LSD_DEBUG > 0)
 	printf("lierda debug:enter File=board/ti/am335x/rasterDisplay.c,Function=fn_lcd_init line2\n");	
+	//printf("lierda debug:enter File=board/ti/am335x/rasterDisplay.c,Function=fn_lcd_init image2 size=%d\n",sizeof(image2));
+	//printf("lierda debug:enter File=board/ti/am335x/rasterDisplay.c,Function=fn_lcd_init image2 addr=0x%08x\n",(unsigned long)image2);
+#endif
+
+    //image1 = (unsigned int*)malloc(M_IMAGE_SIZE*4);
+     image1 = (unsigned int*)(0x81000000);
+
+    unsigned long i;
+    unsigned int *p_image;
+    p_image = image1;
+
+    unsigned char r,r_tmp;
+    unsigned char g,g_tmp;
+    unsigned char b,b_tmp;
+    unsigned char tmp;
+    unsigned long u32_tmp;
+    unsigned long u32_array;
+    *(p_image++) = 0x4000;
+    *(p_image++) = 0x0000;
+    *(p_image++) = 0x0000;
+    *(p_image++) = 0x0000;
+    *(p_image++) = 0x0000;
+    *(p_image++) = 0x0000;
+    *(p_image++) = 0x0000;
+    *(p_image++) = 0x0000;
+    for(i = 0; i < (1024*600); i++)
+    {
+        tmp =  logo_linux_clut224_data[i];
+#if 0
+	r_tmp = (tmp >> 5) & 0x07;
+	g_tmp = (tmp >> 2) & 0x07;
+	b_tmp = (tmp >> 0) & 0x03;
+	r = (r_tmp << 5) | (r_tmp << 2) | (r_tmp >> 1);
+	g = (g_tmp << 5) | (g_tmp << 2) | (g_tmp >> 1);
+	b = (b_tmp << 6) | (b_tmp << 4) | (b_tmp << 2) | (b_tmp << 0);
+#endif
+#if 0
+	r_tmp = (tmp >> 6) & 0x03;
+	g_tmp = (tmp >> 4) & 0x03;
+	b_tmp = (tmp >> 0) & 0x0F;
+	r = (r_tmp << 6) | (r_tmp << 4) | (r_tmp << 2) | (r_tmp << 0);
+	g = (g_tmp << 6) | (g_tmp << 4) | (g_tmp << 2) | (g_tmp << 0);
+	b = (b_tmp << 4) | (b_tmp << 0);
+#endif
+#if 1
+	tmp = tmp - 32;
+	u32_array = tmp;
+	if(u32_array > 220)
+		u32_array = 220;
+	u32_array = u32_array*3;
+	r = logo_linux_clut224_clut[u32_array+0];
+	g = logo_linux_clut224_clut[u32_array+1];
+	b = logo_linux_clut224_clut[u32_array+2];
+	u32_tmp = ((b << 16) | (g << 8) | (r))&0x00FFFFFF;
+	*(p_image) = u32_tmp;
+        p_image++;
+#endif	
+
+	
+#if 0
+// 通过这种方式确认RGB排布顺序
+// 此时显示的结果是 0x00 Blue Green Red
+    for(i = 8; i < (1024*600)/3+8; i++)
+    {
+         *(p_image) = 0x000000FF;
+         p_image++;
+    }
+    for(; i < (2*1024*600)/3+8; i++)
+    {
+         *(p_image) = 0x0000FF00;
+         p_image++;
+    }
+    for(; i < (1024*600)+8; i++)
+    {
+         *(p_image) = 0x00FF0000;
+         p_image++;
+    }
 #endif
 
 	
+	
+    }
+    
+	
     while(1)
     {
-    	LCDIsr();
+	LCDIsr();
+	if((cnt1 > 20) && (cnt2 > 20))
+		break;
     }
 }
 
@@ -174,8 +270,7 @@ static void LCDAINTCConfigure(void)
 static void LCDIsr(void)
 {
     unsigned int  status;
-    static unsigned long cnt1=0;
-    static unsigned long cnt2=0;
+    
 
     status = RasterIntStatus(SOC_LCDC_0_REGS,RASTER_END_OF_FRAME0_INT_STAT |
                                              RASTER_END_OF_FRAME1_INT_STAT );
@@ -184,33 +279,35 @@ static void LCDIsr(void)
 
     if (status & RASTER_END_OF_FRAME0_INT_STAT)
     {
+	cnt1++;	
 	#if (LSD_DEBUG > 0)
-	cnt1++;
-	if(cnt1 >= 10)
+	if((cnt1%10)==0)
 	{
 		printf("lierda debug: RASTER_END_OF_FRAME0_INT_STAT\n");
-		cnt1 = 0;
+		//cnt1 = 0;
 	}
 	#endif        
 	RasterDMAFBConfig(SOC_LCDC_0_REGS, 
                           (unsigned int)image1,
-                          (unsigned int)image1 + sizeof(image1) - 2,
+                          //(unsigned int)image1 + sizeof(image1) - 2,
+			  (unsigned int)image1 + M_IMAGE_SIZE*4 - 2,
                           0);
     }
 
     if(status & RASTER_END_OF_FRAME1_INT_STAT)
     {
-	#if (LSD_DEBUG > 0)
 	cnt2++;
-	if(cnt2 >= 10)
+	#if (LSD_DEBUG > 0)
+	if((cnt2%10)==0)
 	{
 		printf("lierda debug: RASTER_END_OF_FRAME1_INT_STAT\n");
-		cnt2 = 0;
+		//cnt2 = 0;
 	}
 	#endif           
 	RasterDMAFBConfig(SOC_LCDC_0_REGS, 
                           (unsigned int)image1,
-                          (unsigned int)image1 + sizeof(image1) - 2,
+                          //(unsigned int)image1 + sizeof(image1) - 2,
+			  (unsigned int)image1 + M_IMAGE_SIZE*4 - 2,
                           1);
     }
 
