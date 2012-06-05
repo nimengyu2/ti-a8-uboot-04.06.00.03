@@ -49,7 +49,7 @@ unsigned int image2[1024*600+8] __attribute__((aligned(4)))= {
 #endif
 extern unsigned char logo_linux_clut224_data[615096];
 extern unsigned char logo_linux_clut224_clut[660];
-#define M_IMAGE_SIZE (1024*600+8)
+#define M_IMAGE_SIZE (800*480+8)
 unsigned int *image1;
 
 /******************************************************************************
@@ -127,7 +127,7 @@ int fn_lcd_init(void)
     *(p_image++) = 0x0000;
     *(p_image++) = 0x0000;
     *(p_image++) = 0x0000;
-    for(i = 0; i < (1024*600); i++)
+    for(i = 0; i < (800*480); i++)
     {
         tmp =  logo_linux_clut224_data[i];
 #if 0
@@ -216,7 +216,7 @@ static void SetUpLCD(void)
     
     /* Configure the pclk */
     //RasterClkConfig(SOC_LCDC_0_REGS, 23040000, 192000000);
-    RasterClkConfig(SOC_LCDC_0_REGS, 1024*600*60, 192000000);
+    RasterClkConfig(SOC_LCDC_0_REGS, 800*480*60, 192000000);
 
     /* Configuring DMA of LCD controller */ 
     RasterDMAConfig(SOC_LCDC_0_REGS, RASTER_DOUBLE_FRAME_BUFFER,
@@ -237,12 +237,12 @@ static void SetUpLCD(void)
                                             RASTER_AC_BIAS_HIGH     , 0, 255);
 
     /* Configuring horizontal timing parameter */
-    //RasterHparamConfig(SOC_LCDC_0_REGS, 800, 48, 40, 40);
-	RasterHparamConfig(SOC_LCDC_0_REGS, 1024, 48, 40, 40);
+    RasterHparamConfig(SOC_LCDC_0_REGS, 800, 48, 40, 40);
+	//RasterHparamConfig(SOC_LCDC_0_REGS, 1024, 48, 40, 40);
 
     /* Configuring vertical timing parameters */
-    //RasterVparamConfig(SOC_LCDC_0_REGS, 480, 3, 13, 29);
-	RasterVparamConfig(SOC_LCDC_0_REGS, 600, 3, 13, 29);
+    RasterVparamConfig(SOC_LCDC_0_REGS, 480, 3, 13, 29);
+	//RasterVparamConfig(SOC_LCDC_0_REGS, 600, 3, 13, 29);
 
 
     RasterFIFODMADelayConfig(SOC_LCDC_0_REGS, 128);

@@ -23,7 +23,7 @@
 	.type	main, %function
 main:
 .LFB72:
-	.file 1 "/am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/lib/asm-offsets.c"
+	.file 1 "/linux-sdk/am335x-uboot-04.06.00.03/lib/asm-offsets.c"
 	.loc 1 23 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
@@ -31,12 +31,12 @@ main:
 	@ link register save eliminated.
 	.loc 1 25 0
 #APP
-@ 25 "/am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/lib/asm-offsets.c" 1
+@ 25 "/linux-sdk/am335x-uboot-04.06.00.03/lib/asm-offsets.c" 1
 	
 ->GENERATED_GBL_DATA_SIZE #128 (sizeof(struct global_data) + 15) & ~15
 @ 0 "" 2
 	.loc 1 28 0
-@ 28 "/am335x/ti-sdk-am335x-evm/board-support/u-boot-2011.09-psp04.06.00.03/lib/asm-offsets.c" 1
+@ 28 "/linux-sdk/am335x-uboot-04.06.00.03/lib/asm-offsets.c" 1
 	
 ->GENERATED_BD_INFO_SIZE #32 (sizeof(struct bd_info) + 15) & ~15
 @ 0 "" 2
@@ -214,11 +214,10 @@ main:
 	.ascii	"unsigned int\000"
 .LASF1:
 	.ascii	"long unsigned int\000"
-.LASF12:
-	.ascii	"/am335x/ti-sdk-am335x-evm/board-support/u-boot-2011"
-	.ascii	".09-psp04.06.00.03\000"
 .LASF10:
 	.ascii	"GNU C 4.5.3 20110311 (prerelease)\000"
+.LASF12:
+	.ascii	"/linux-sdk/am335x-uboot-04.06.00.03\000"
 .LASF4:
 	.ascii	"short int\000"
 .LASF3:
@@ -226,8 +225,8 @@ main:
 .LASF7:
 	.ascii	"long long unsigned int\000"
 .LASF11:
-	.ascii	"/am335x/ti-sdk-am335x-evm/board-support/u-boot-2011"
-	.ascii	".09-psp04.06.00.03/lib/asm-offsets.c\000"
+	.ascii	"/linux-sdk/am335x-uboot-04.06.00.03/lib/asm-offsets"
+	.ascii	".c\000"
 .LASF0:
 	.ascii	"unsigned char\000"
 .LASF8:
