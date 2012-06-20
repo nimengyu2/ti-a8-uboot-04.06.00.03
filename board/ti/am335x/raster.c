@@ -13,6 +13,7 @@
 #include "hw_lcdc.h"
 #include "hw_types.h"
 #include "raster.h"
+#include "soc_AM335x.h"
 
 /*******************************************************************************
 *                       INTERNAL API DEFINITIONS
@@ -27,6 +28,12 @@
 * 
 * \return none.
 **/
+
+unsigned int RasterGetRegData(unsigned int reg)
+{
+	return (HWREG(SOC_LCDC_0_REGS + reg));
+}
+
 void RasterClkConfig(unsigned int baseAddr, unsigned int pClk,
                      unsigned int moduleClk)
 {
@@ -357,7 +364,7 @@ void RasterHparamConfig(unsigned int baseAddr, unsigned int numOfppl,
     {
          ppl = numOfppl - 1;
 
-         ppl = (ppl & 0x000003f0) | ((ppl & 0x00000400) >> 8);
+         ppl = (ppl & 0x000003f0) | ((ppl & 0x00000400) >> 7);
 
          HWREG(baseAddr + LCDC_RASTER_TIMING_0) = ppl; 
     }

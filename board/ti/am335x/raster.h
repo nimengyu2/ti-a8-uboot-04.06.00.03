@@ -340,6 +340,9 @@ extern void RasterEndOfInterrupt(unsigned int baseAddr, unsigned int flag);
 extern void RasterClocksEnable(unsigned int baseAddr);
 extern unsigned int LCDVersionGet(void);
 
+extern unsigned int RasterGetRegData(unsigned int reg);
+
+
 #ifdef __cplusplus
 }
 #endif
