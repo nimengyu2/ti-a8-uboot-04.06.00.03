@@ -43,6 +43,7 @@
 /LOG
 /errlog
 /reloc_off
+/am335x/*
 
 /include/generated/
 /lib/asm-offsets.s
