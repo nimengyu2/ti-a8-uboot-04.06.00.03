@@ -18,6 +18,9 @@
 #define CONFIG_SYS_NO_FLASH
 #define CONFIG_NAND_ENV
 
+#define CONFIG_YAFFS2
+#define CONFIG_CMD_NAND_YAFFS
+
 #include <asm/arch/cpu.h>		/* get chip and board defs */
 #include <asm/arch/hardware.h>
 
@@ -407,6 +410,19 @@
 #define CONFIG_CMD_FAT
 #define CONFIG_CMD_EXT2
 #endif
+
+
+
+#define CONFIG_CMD_MTDPARTS
+#define CONFIG_MTD_DEVICE
+#define CONFIG_MTD_PARTITIONS
+#define CONFIG_RBTREE
+#define CONFIG_LZO 
+#define MTDIDS_DEFAULT "nand0=am335x_nand"
+#define MTDPARTS_DEFAULT "mtdparts=am335x_nand:128k(spl),128k(spl.backup1),128k(spl.backup2),128k(spl.backup3),2m(u-boot),5m@0x280000(kernel),-(rootfs)"
+#define MTD_ACTIVE_PART "nand0,6"
+
+
 
 /* Unsupported features */
 #undef CONFIG_USE_IRQ

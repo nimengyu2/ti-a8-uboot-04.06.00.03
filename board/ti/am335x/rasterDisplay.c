@@ -45,18 +45,18 @@
 
 
 
-#define WIDTH 1280
-#define HEIGHT  800
+#define WIDTH 800
+#define HEIGHT  600
 
 #define HFP   16
-#define HBP   46
-#define HSW   40
+#define HBP   100
+#define HSW   100
 
 #define VFP   40
 #define VBP   3
 #define VSW   20
 
-#define FRESH_HZ  40
+#define FRESH_HZ  60
 
 
 #if 0
@@ -333,7 +333,8 @@ static void SetUpLCD(void)
     
     /* Configure the pclk */
     //RasterClkConfig(SOC_LCDC_0_REGS, 23040000, 192000000);
-    RasterClkConfig(SOC_LCDC_0_REGS, (WIDTH+HFP+HBP+HSW)*(HEIGHT+VFP+VBP+VSW)*FRESH_HZ, 192000000);
+    //RasterClkConfig(SOC_LCDC_0_REGS, (WIDTH+HFP+HBP+HSW)*(HEIGHT+VFP+VBP+VSW)*FRESH_HZ, 192000000);
+	RasterClkConfig(SOC_LCDC_0_REGS, 40000000, 192000000);
 
     /* Configuring DMA of LCD controller */ 
     RasterDMAConfig(SOC_LCDC_0_REGS, RASTER_DOUBLE_FRAME_BUFFER,

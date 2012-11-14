@@ -20,7 +20,8 @@ LIB	= $(obj)lib$(BOARD).o
 #COBJS	:= evm.o pll.o mux.o lcd.o raster.o rasterDisplay.o logo_linux_clut224_800_480.o
 #COBJS	:= evm.o pll.o mux.o lcd.o raster.o rasterDisplay.o logo_linux_clut224_1024_600.o
 #COBJS	:= evm.o pll.o mux.o lcd.o raster.o rasterDisplay.o logo_linux_clut224_1024_768.o
-COBJS	:= evm.o pll.o mux.o lcd.o raster.o rasterDisplay.o logo_linux_clut224_1280_800.o
+#COBJS	:= evm.o pll.o mux.o lcd.o raster.o rasterDisplay.o logo_linux_clut224_1280_800.o
+COBJS	:= evm.o pll.o mux.o lcd.o raster.o rasterDisplay.o logo_linux_clut224_800x600.o
 	
 SRCS	:= $(SOBJS:.o=.S) $(COBJS:.o=.c)
 OBJS	:= $(addprefix $(obj),$(COBJS))
