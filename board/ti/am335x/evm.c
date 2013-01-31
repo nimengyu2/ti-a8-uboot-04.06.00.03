@@ -222,7 +222,7 @@ static void config_vtp(void)
 static void config_emif_ddr2(void)
 {
 	u32 i;
-
+	printf("AAAA:enter function:config_emif_ddr2\n");
 	/*Program EMIF0 CFG Registers*/
 	__raw_writel(EMIF_READ_LATENCY, EMIF4_0_DDR_PHY_CTRL_1);
 	__raw_writel(EMIF_READ_LATENCY, EMIF4_0_DDR_PHY_CTRL_1_SHADOW);
@@ -235,6 +235,7 @@ static void config_emif_ddr2(void)
 	__raw_writel(EMIF_TIM3, EMIF4_0_SDRAM_TIM_3_SHADOW);
 
 	__raw_writel(EMIF_SDCFG, EMIF4_0_SDRAM_CONFIG);
+	printf("AAAA:EMIF_SDCFG=0x%08x\n",EMIF_SDCFG);
 	__raw_writel(EMIF_SDCFG, EMIF4_0_SDRAM_CONFIG2);
 
 	/* __raw_writel(EMIF_SDMGT, EMIF0_0_SDRAM_MGMT_CTRL);
@@ -260,6 +261,7 @@ static void config_am335x_ddr(void)
 {
 	int data_macro_0 = 0;
 	int data_macro_1 = 1;
+	printf("AAAA:enter function:config_am335x_ddr\n");
 
 	enable_ddr_clocks();
 
