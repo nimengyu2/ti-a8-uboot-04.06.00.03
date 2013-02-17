@@ -335,6 +335,61 @@ int read_eeprom(void)
 	return 0;
 }
 
+#define I2C_ADDR_AS3711  0x40
+unsigned char g_pu8_as3711_reg[200];
+/*
+ * Read header information from EEPROM into global structure.
+ */
+int read_as3711(void)
+{
+	int i;
+	if (i2c_probe(I2C_ADDR_AS3711)) {
+		printf("AAAA:Could not probe the as3711; something fundamentally "
+			"wrong on the I2C bus.\n");
+		return 1;
+	}
+	else
+	{
+		printf("AAAA:probe as3711 ok\n");
+	}
+
+	/* read the eeprom using i2c */
+	//if (i2c_read(I2C_ADDR_AS3711, 0, 1, g_pu8_as3711_reg,sizeof(g_pu8_as3711_reg))) {
+	if (i2c_read(I2C_ADDR_AS3711, 0, 1, g_pu8_as3711_reg,1)) {
+		printf("Could not read the as3711; something fundamentally"
+			" wrong on the I2C bus.\n");
+		return 1;
+	}
+	else
+	{
+		printf("AAAA:read  as3711 reg ok\n");
+		#if 0
+		printf("AAAA:as3711 reg is start:\n");
+		for(i = 0;i < sizeof(g_pu8_as3711_reg);i++)
+		{
+			printf("[R0x%02x]=0x%02x ",i,g_pu8_as3711_reg[i]);
+			if(((i%10) == 9))
+			{
+				printf("\n");
+			}
+		}
+		printf("\nAAAA:as3711 reg end\n");
+		#endif
+		printf("read reg0=0x%02x\n",g_pu8_as3711_reg[0]);
+	}
+
+	unsigned char sd1_write_val;
+	sd1_write_val = 0x33;
+	i2c_write(I2C_ADDR_AS3711, 0, 1, &sd1_write_val, 1);
+
+	unsigned char sd1_read_val;
+	i2c_read(I2C_ADDR_AS3711, 0, 1, &sd1_read_val, 1);
+	printf("read reg0=0x%02x\n",sd1_read_val);
+	return 0;
+}
+
+
+
 #if defined(CONFIG_SPL_BUILD) && defined(CONFIG_SPL_BOARD_INIT)
 
 /**
@@ -481,6 +536,8 @@ void spl_board_init(void)
 	enable_i2c0_pin_mux();
 
 	i2c_init(CONFIG_SYS_I2C_SPEED, CONFIG_SYS_I2C_SLAVE);
+
+	read_as3711();
 
 	if (read_eeprom()) {
 		printf("read_eeprom() failure\n");
