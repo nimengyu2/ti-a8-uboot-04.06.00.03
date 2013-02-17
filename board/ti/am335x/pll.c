@@ -279,7 +279,8 @@ void enable_ddr_clocks(void)
  */
 void pll_init()
 {
-	mpu_pll_config(MPUPLL_M_500);
+	//mpu_pll_config(MPUPLL_M_500);
+	mpu_pll_config(MPUPLL_M_720);
 	core_pll_config();
 	per_pll_config();
 	ddr_pll_config();
