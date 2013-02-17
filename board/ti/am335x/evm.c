@@ -723,6 +723,8 @@ err_out:
 
 	gpmc_init();
 
+	printf("AAAA:this version for 720mhz cpufreq,and core voltage to 1.2v\n");
+
 	return 0;
 }
 
