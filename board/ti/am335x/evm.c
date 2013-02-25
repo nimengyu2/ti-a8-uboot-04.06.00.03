@@ -335,56 +335,72 @@ int read_eeprom(void)
 	return 0;
 }
 
-#define I2C_ADDR_AS3711  0x40
-unsigned char g_pu8_as3711_reg[200];
+#define I2C_ADDR_TPS65910  0x2D
+#define TPS65910_VDD2_OP				0x25
+#define TPS65910_VDD2_SR				0x26
+#define TPS65910_DEVCTRL				0x3F
+#define DEVCTRL_SR_CTL_I2C_SEL_MASK			0x10
+unsigned char g_pu8_TPS65910_reg[0x80];
 /*
  * Read header information from EEPROM into global structure.
  */
-int read_as3711(void)
+int read_TPS65910(void)
 {
 	int i;
-	if (i2c_probe(I2C_ADDR_AS3711)) {
-		printf("AAAA:Could not probe the as3711; something fundamentally "
+	if (i2c_probe(I2C_ADDR_TPS65910)) {
+		printf("AAAA:Could not probe the tps65910; something fundamentally "
 			"wrong on the I2C bus.\n");
 		return 1;
 	}
 	else
 	{
-		printf("AAAA:probe as3711 ok\n");
+		printf("AAAA:probe tps65910 ok\n");
 	}
 
 	/* read the eeprom using i2c */
-	//if (i2c_read(I2C_ADDR_AS3711, 0, 1, g_pu8_as3711_reg,sizeof(g_pu8_as3711_reg))) {
-	if (i2c_read(I2C_ADDR_AS3711, 0, 1, g_pu8_as3711_reg,1)) {
-		printf("Could not read the as3711; something fundamentally"
+	if (i2c_read(I2C_ADDR_TPS65910, 0, 1, g_pu8_TPS65910_reg,sizeof(g_pu8_TPS65910_reg))) {
+	//if (i2c_read(I2C_ADDR_TPS65910, 0, 1, g_pu8_TPS65910_reg,1)) {
+		printf("Could not read the TPS65910; something fundamentally"
 			" wrong on the I2C bus.\n");
 		return 1;
 	}
 	else
 	{
-		printf("AAAA:read  as3711 reg ok\n");
-		#if 0
-		printf("AAAA:as3711 reg is start:\n");
-		for(i = 0;i < sizeof(g_pu8_as3711_reg);i++)
+		printf("AAAA:read  TPS65910 reg ok\n");
+		#if 1
+		printf("AAAA:TPS65910 reg is start:\n");
+		for(i = 0;i < sizeof(g_pu8_TPS65910_reg);i++)
 		{
-			printf("[R0x%02x]=0x%02x ",i,g_pu8_as3711_reg[i]);
+			printf("[R0x%02x]=0x%02x ",i,g_pu8_TPS65910_reg[i]);
 			if(((i%10) == 9))
 			{
 				printf("\n");
 			}
 		}
-		printf("\nAAAA:as3711 reg end\n");
+		printf("\nAAAA:TPS65910 reg end\n");
 		#endif
-		printf("read reg0=0x%02x\n",g_pu8_as3711_reg[0]);
+		//printf("read reg0=0x%02x\n",g_pu8_TPS65910_reg[0]);
 	}
 
 	unsigned char sd1_write_val;
-	sd1_write_val = 0x33;
-	i2c_write(I2C_ADDR_AS3711, 0, 1, &sd1_write_val, 1);
-
 	unsigned char sd1_read_val;
-	i2c_read(I2C_ADDR_AS3711, 0, 1, &sd1_read_val, 1);
-	printf("read reg0=0x%02x\n",sd1_read_val);
+	i2c_read(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_read_val, 1);
+	printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
+	sd1_write_val = sd1_read_val | DEVCTRL_SR_CTL_I2C_SEL_MASK;
+	i2c_write(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_write_val, 1);
+	i2c_read(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_read_val, 1);
+	printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
+
+	sd1_write_val = 0x38;
+	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD2_SR, 1, &sd1_write_val, 1);
+	sd1_write_val = 0x80;
+	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD2_OP, 1, &sd1_write_val, 1);
+
+	
+	i2c_read(I2C_ADDR_TPS65910, TPS65910_VDD2_SR, 1, &sd1_read_val, 1);
+	printf("read regSR=0x%02x\n",sd1_read_val);
+	i2c_read(I2C_ADDR_TPS65910, TPS65910_VDD2_OP, 1, &sd1_read_val, 1);
+	printf("read regOP=0x%02x\n",sd1_read_val);
 	return 0;
 }
 
@@ -537,7 +553,7 @@ void spl_board_init(void)
 
 	i2c_init(CONFIG_SYS_I2C_SPEED, CONFIG_SYS_I2C_SLAVE);
 
-	read_as3711();
+	read_TPS65910();
 
 	if (read_eeprom()) {
 		printf("read_eeprom() failure\n");
