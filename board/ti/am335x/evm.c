@@ -336,6 +336,8 @@ int read_eeprom(void)
 }
 
 #define I2C_ADDR_TPS65910  0x2D
+#define TPS65910_VDD1_OP				0x22
+#define TPS65910_VDD1_SR				0x23
 #define TPS65910_VDD2_OP				0x25
 #define TPS65910_VDD2_SR				0x26
 #define TPS65910_DEVCTRL				0x3F
@@ -382,6 +384,8 @@ int read_TPS65910(void)
 		//printf("read reg0=0x%02x\n",g_pu8_TPS65910_reg[0]);
 	}
 
+	printf("AAAA:setting VDD1 to 1.2V\n");
+
 	unsigned char sd1_write_val;
 	unsigned char sd1_read_val;
 	i2c_read(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_read_val, 1);
@@ -392,14 +396,14 @@ int read_TPS65910(void)
 	printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
 
 	sd1_write_val = 0x38;
-	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD2_SR, 1, &sd1_write_val, 1);
+	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD1_SR, 1, &sd1_write_val, 1);
 	sd1_write_val = 0x80;
-	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD2_OP, 1, &sd1_write_val, 1);
+	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD1_OP, 1, &sd1_write_val, 1);
 
 	
-	i2c_read(I2C_ADDR_TPS65910, TPS65910_VDD2_SR, 1, &sd1_read_val, 1);
+	i2c_read(I2C_ADDR_TPS65910, TPS65910_VDD1_SR, 1, &sd1_read_val, 1);
 	printf("read regSR=0x%02x\n",sd1_read_val);
-	i2c_read(I2C_ADDR_TPS65910, TPS65910_VDD2_OP, 1, &sd1_read_val, 1);
+	i2c_read(I2C_ADDR_TPS65910, TPS65910_VDD1_OP, 1, &sd1_read_val, 1);
 	printf("read regOP=0x%02x\n",sd1_read_val);
 	return 0;
 }
