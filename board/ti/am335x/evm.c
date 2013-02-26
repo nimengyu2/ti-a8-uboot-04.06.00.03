@@ -368,8 +368,9 @@ int read_TPS65910(void)
 	}
 	else
 	{
+		#if 0		
 		printf("AAAA:read  TPS65910 reg ok\n");
-		#if 1
+		
 		printf("AAAA:TPS65910 reg is start:\n");
 		for(i = 0;i < sizeof(g_pu8_TPS65910_reg);i++)
 		{
@@ -389,11 +390,11 @@ int read_TPS65910(void)
 	unsigned char sd1_write_val;
 	unsigned char sd1_read_val;
 	i2c_read(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_read_val, 1);
-	printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
+	//printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
 	sd1_write_val = sd1_read_val | DEVCTRL_SR_CTL_I2C_SEL_MASK;
 	i2c_write(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_write_val, 1);
 	i2c_read(I2C_ADDR_TPS65910, TPS65910_DEVCTRL, 1, &sd1_read_val, 1);
-	printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
+	//printf("read regDEVCTRL=0x%02x\n",sd1_read_val);
 
 	sd1_write_val = 0x38;
 	i2c_write(I2C_ADDR_TPS65910, TPS65910_VDD1_SR, 1, &sd1_write_val, 1);
